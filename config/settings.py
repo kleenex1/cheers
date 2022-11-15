@@ -162,7 +162,8 @@ ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'account_email_confirmat
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'account_email_confirmation'
 # 비밀번호 재설정 링크 유효기간(초)
 PASSWORD_RESET_TIMEOUT = 3600
-
+# allauth가 발송하는 이메일 제목에는 오버라이딩을 해도 항상 domain이 앞에 붙게 된다.(이를 제거하는 세팅)
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
 
 # Email settings
 
