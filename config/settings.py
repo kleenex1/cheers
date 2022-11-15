@@ -159,6 +159,9 @@ ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 # 인증 메일이 오면 email_confirmation.html이 뜰 수 있도록 한다.
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'account_email_confirmation'
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'account_email_confirmation'
+# 비밀번호 재설정 링크 유효기간(초)
+PASSWORD_RESET_TIMEOUT = 3600
+
 
 # Email settings
 
