@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,17 +21,28 @@
     <form method="post">
       {% csrf_token %}
       <div>
-        <input type="email" name="email" placeholder="이메일" autocomplete="email" class="cp-input" required id="id_email">
+        {{ form.email|add_class:"add_class"|attr:"placeholder:이메일"|add_error_class:"error_class"}}
+        {% for error in form.email.errors %}
+        <div class="error-message">{{error}}</div>
+        {% endfor %}
       </div>
       <div>
-        <input type="text" name="nickname" maxlength="15" placeholder="닉네임 (Cheers)에서 사용되는 이름입니다)" class="error cp-input" required id="id_nickname">
-        <div class="error-message">이미 사용중인 닉네임입니다.</div>
+        {{ form.nickname|add_class:"add_class"|attr:"placeholder:닉네임 (Cheers에서 사용되는 이름입니다)"|add_error_class:"error_class"}}
+        {% for error in form.nickname.errors %}
+        <div class="error-message">{{error}}</div>
+        {% endfor %}
       </div>
       <div>
-        <input type="password" name="password1" placeholder="비밀번호" autocomplete="new-password" class="cp-input" required id="id_password1">
+        {{ form.password1|add_class:"add_class"|attr:"placeholder: 비밀번호"|add_error_class:"error_class"}}
+        {% for error in form.password1.errors %}
+        <div class="error-message">{{error}}</div>
+        {% endfor %}
       </div>
       <div>
-        <input type="password" name="password2" placeholder="비밀번호 확인" class="cp-input" required id="id_password2">
+        {{ form.password2|add_class:"add_class"|attr:"placeholder: 비밀번호 확인"|add_error_class:"error_class"}}
+        {% for error in form.password2.errors %}
+        <div class="error-message">{{error}}</div>
+        {% endfor %}
       </div>
       <button class="cp-button" type="submit">회원가입</button>
     </form>
