@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from cheers.views import CustomPasswordChangeView
+
 
 urlpatterns = [
     # admin
@@ -31,5 +33,10 @@ urlpatterns = [
     path("email-confirmation", 
     TemplateView.as_view(template_name="cheers/email_confirmation.html") 
     ,name="account_email_confirmation"),
+    # Password 변경시 url 설정 (allauth가 설정한 곳이 아닌 커스텀하여 내가 redirect하고싶은 곳으로)
+    # 'allauth.urls'보다 먼저 나와있어야 해당 url로 먼저 간다.
+    path('password/change/', 
+    CustomPasswordChangeView.as_view(), 
+    name='account_password_change' ),
     path('', include('allauth.urls')),
 ]
