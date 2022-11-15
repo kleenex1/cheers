@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # 어떤 기능을 여러사이트에서 사용할 수 있게 해줌(프로젝트 하나로 여러사이트 운영)
     'django.contrib.sites', 
     'cheers',
+    'widget_tweaks',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
