@@ -15,9 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 urlpatterns = [
+    # admin
     path('admin/', admin.site.urls),
+    
+    # cheers
     path('', include("cheers.urls")),
+    
+    # allauth
+
+    # 단순히 페이지를 render해주기만 하면되는 페이지라서 
+    # 따로 view를 작성하지 않고 Generic view(template view)를 활용
+    path("email-confirmation", 
+    TemplateView.as_view(template_name="cheers/email_confirmation.html") 
+    ,name="account_email_confirmation"),
     path('', include('allauth.urls')),
 ]
