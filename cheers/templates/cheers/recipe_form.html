@@ -1,0 +1,51 @@
+
+{% load widget_tweaks %}
+
+{% block title %}새 포스트 작성 | Cheers{% endblock title %}
+
+{% block content %}
+<main class="site-body">
+  <form class="review-form max-content-width" method="post" autocomplete="off">
+    {% csrf_token %}
+    <div class="title">
+      <input type="text" name="title" maxlength="30" placeholder="제목" class="cp-input" required id="id_title">
+    </div>
+    <div class="restaurant-name">
+      <input type="text" name="restaurant_name" maxlength="20" placeholder="음식점 이름" class="cp-input" required id="id_restaurant_name">
+    </div>
+    <div class="restaurant-link">
+      <input type="url" name="restaurant_link" maxlength="200" placeholder="네이버 또는 카카오 플레이스 주소" class="cp-input" required id="id_restaurant_link">
+    </div>
+    
+    <div class="content">
+      <textarea name="review" cols="40" rows="10" placeholder="리뷰를 작성해 주세요." class="cp-input" id="id_review"></textarea>
+    </div>
+    <div class="file">
+      <div class="file-content">
+        <div>
+          <input type="file" name="image1" accept="image/*" id="id_image1">
+        </div>
+      </div>
+    </div>
+    <div class="file">
+      <div class="file-content">
+        <div>
+          <input type="file" name="image2" accept="image/*" id="id_image2">
+        </div>
+      </div>
+    </div>
+    <div class="file">
+      <div class="file-content">
+        <div>
+          <input type="file" name="image3" accept="image/*" id="id_image3">
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <a class="cp-button secondary cancel" href="#">취소</a>
+      <button class="cp-button submit" type="submit">완료</button>
+    </div>
+  </form>
+</main>
+{% endblock content %}

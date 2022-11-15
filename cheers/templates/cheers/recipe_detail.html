@@ -1,0 +1,39 @@
+
+{% load static %}
+
+{% block title %}{{ review.title }} | Cheers{% endblock title %}
+
+{% block content %}
+<main class="site-body">
+  <article class="review-detail max-content-width">
+    <div class="review-info">
+      <h1 class="title">{{ recipe.title }}</h1>
+      <div class="author">
+        <a class="review-author" href="#">
+          <span>{{ recipe.author.nickname }}</span>
+        </a>
+      </div>
+      <date class="date">{{ recipe.created_at }}</date>
+    </div>
+
+    <div class="content">
+      <img class="thumb" src="{{ recipe.image1.url }}">
+      {% if recipe.image2 %}
+      <img class="thumb" src="{{ recipe.image2.url }}">
+      {% endif %}
+      {% if recipe.image3 %}
+      <img class="thumb" src="{{ recipe.image3.url }}">
+      {% endif %}
+      <p class="content">{{ recipe.content|linebreaksbr }}</p>
+    </div>
+
+    <div class="footer">
+      <a class="back-link" href="{% url 'index' %}">&lt; 목록으로</a>
+      <div class="buttons">
+        <a class="cp-button warn" href="#">삭제</a>
+        <a class="cp-button secondary" href="#">수정</a>
+      </div>
+    </div>
+  </article>
+</main>
+{% endblock content %}
