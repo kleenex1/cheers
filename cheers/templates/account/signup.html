@@ -1,4 +1,4 @@
-{% extends "main.html" %}
+
 
 {% load static %}
 {% load widget_tweaks %}
@@ -43,7 +43,7 @@
     </form>
     
     <div class="info">
-      이미 회원이신가요?<a class="link" href="#">로그인</a>
+      이미 회원이신가요?<a class="link" href="{% url 'account_login' %}">로그인</a>
     </div>
   </main>
 </div>
