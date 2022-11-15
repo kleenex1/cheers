@@ -152,7 +152,13 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_FORM_CLASS = 'cheers.forms.SignupForm'
 # 회원가입시 폼에 오류가 나더라도 비밀번호는 그대로 남아있게 설정
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True
-
+# 이메일 인증 관련 설정(mandatory, optional(default값), none)
+ACCOUNT_EMAIL_VARIFICATION = "optional"
+# 이메일 인증 완료 메일을 누르면 기존 allauth url로 redirect되는 것을 막고 내가 설정해놓은 곳으로 redirect
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+# 인증 메일이 오면 email_confirmation.html이 뜰 수 있도록 한다.
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'account_email_confirmation'
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'account_email_confirmation'
 
 # Email settings
 
