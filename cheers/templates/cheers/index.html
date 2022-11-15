@@ -17,7 +17,7 @@
 
       <div class="contents">
         {% for recipe in recipes %}
-        <a href="#">
+        <a href="{% url 'recipe-detail' recipe.id %}">
           <section class="cp-card content">
             <div class="thumb" style="background-image: url('{{ recipe.image1.url }}');"></div>
             <div class="body">
@@ -33,9 +33,6 @@
           </section>
         </a>
         {% endfor %}
-        {% comment %}
-        <p class="empty">아직 리뷰가 없어요 :(</p>
-        {% endcomment %}
       </div>
 
       {% if is_paginated %}
