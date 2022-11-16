@@ -57,6 +57,9 @@ class Comment(models.Model):
     #Comment.likes 로 접근가능
     likes = GenericRelation('Like') 
 
+    class Meta:
+        ordering = ["-created_at"]
+        
     def __str__(self):
         return self.content[:20]
 
