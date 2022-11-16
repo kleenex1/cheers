@@ -1,4 +1,13 @@
-
+<style>
+  .profile {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
 
 {% block content %}
 <main class="site-body">
@@ -21,12 +30,13 @@
           <section class="cp-card content">
             <div class="thumb" style="background-image: url('{{ recipe.image1.url }}');"></div>
             <div class="body">
-              <span class="cp-chip green">{{recipe.title}}</span>
-              <h2 class="title">{{recipe.content|slice:":30"}}</h2>
-              <date class="date">{{recipe.created_at}}</date>
+              <span class="cp-chip green">{{ recipe.title }}</span>
+              <h2 class="title">{{ recipe.content|slice:":30" }}</h2>
+              <date class="date">{{ recipe.created_at }}</date>
               <div class="metadata">
                 <div class="review-author">
-                  <span>{{recipe.author}}</span>
+                  <div class="profile" style="background-image: url('{{ recipe.author.profile_pic.url }}')"></div>
+                  <span>{{ recipe.author.nickname }}</span>
                 </div>
               </div>
             </div>
