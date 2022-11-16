@@ -17,7 +17,12 @@
       <h1>각종 칵테일 레시피</h1>
     </div>
   </div>
-
+  <div class="header-search">
+    <form class="search-form" action="{% url 'search' %}" method="get">
+      <input class="search-input" name="query" type="text" placeholder="칵테일, 레시피 등을 검색해보세요" required>
+      <button class="cp-button search-button" type="submit">검색</button>
+    </form>
+  </div>
   <div class="content-list max-content-width">
     <div class="header">
       <h2>목록</h2>

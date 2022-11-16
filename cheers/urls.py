@@ -6,7 +6,6 @@ urlpatterns = [
     # 레시피
     path('recipes/', views.RecipeListView.as_view(), name='recipe-list'),
     path('recipes/following/', views.FollowingRecipeListView.as_view(), name='following-recipe-list'),
-
     path('recipes/<int:recipe_id>/', views.RecipeDetailView.as_view(),name='recipe-detail'),
     path('recipes/create/', views.RecipeCreateView.as_view(), name="recipe-create"),
     path('recipes/<int:recipe_id>/edit/', views.RecipeUpdateView.as_view(), name='recipe-update'),
@@ -26,5 +25,6 @@ urlpatterns = [
     path('users/<int:user_id>/follow/', views.ProcessFollowView.as_view(), name='process-follow'),
     path('users/<int:user_id>/following/', views.FollowingListView.as_view(), name='following-list'),
     path('users/<int:user_id>/followers/', views.FollowerListView.as_view(), name='follower-list'),
-
+    # 검색
+    path('search/', views.SearchView.as_view(), name='search'),
 ]

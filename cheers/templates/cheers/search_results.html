@@ -1,0 +1,20 @@
+
+{% block title %}"{{ query }}" | Cheers{% endblock title %}
+
+{% block content %}
+<main class="site-body">
+  <div class="content-list max-content-width">
+    <form class="search-form" action="{% url 'search' %}" method="get">
+      <input class="search-input" name="query" value="{{query}}" type="text" placeholder="칵테일, 레시피 등을 검색해보세요" required>
+      <button class="cp-button search-button" type="submit">검색</button>
+    </form>
+    <div class="header">
+      <h2>"{{ query }}"에 대한 검색 결과 ({{ paginator.count }})</h2>
+    </div>
+    {% include 'components/recipe_list.html' with recipes=search_results empty_message="검색 결과가 없어요 :(" %}
+    {% if is_paginated %}
+      {% include 'components/pagination.html' with page_obj=page_obj %}
+    {% endif %}
+  </div>
+</main>
+{% endblock content %}
