@@ -36,7 +36,7 @@ class Recipe(models.Model):
     
     # GenericFoeingKey는 related_name을 설정할 수 없어서 GenericRelation을 불러와서 쓴다.
     # Recipe.likes 로 접근가능
-    likes = GenericRelation('Like', related_query_name='comment')
+    likes = GenericRelation('Like', related_query_name='recipe')
 
     def __str__(self):
         return self.title

@@ -1,18 +1,21 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.views.generic import (
+    View,
     ListView, 
     DetailView, 
     CreateView, 
     UpdateView,
     DeleteView,
 )
+from django.contrib.contenttypes.models import ContentType
 from braces.views import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.models import EmailAddress
 from allauth.account.views import PasswordChangeView
-from cheers.models import Recipe, User, Comment
+from cheers.models import Recipe, User, Comment, Like
 from cheers.forms import RecipeForm, ProfileForm, CommentForm
 from cheers.functions import confirmation_required_redirect
+
 # Create your views here.
 
 class IndexView(ListView):
@@ -31,6 +34,16 @@ class RecipeDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = CommentForm()
+        # 좋아요 contenttype id를 넘겨주기 위한 코드
+        context['recipe_ctype_id'] = ContentType.objects.get(model='recipe').id
+        context['comment_ctype_id'] = ContentType.objects.get(model='comment').id
+        
+        # 좋아요 눌렀는지 판단하기
+        user = self.request.user
+        if user.is_authenticated:
+            recipe = self.object 
+            context['likes_recipes'] = Like.objects.filter(user=user, recipe=recipe).exists()
+            context['liked_comments'] = Comment.objects.filter(recipe=recipe).filter(likes__user=user)
         return context
 
 class RecipeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
@@ -126,7 +139,9 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = CommentForm
     template_name = 'cheers/comment_update_form.html'
     pk_url_kwarg = 'comment_id'
-
+    redirect_unauthenticated_users = True
+    raise_exception = confirmation_required_redirect
+    
     def get_success_url(self):
         return reverse('recipe-detail', kwargs={'recipe_id': self.object.recipe.id})
     
@@ -138,13 +153,40 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Comment
     template_name = 'cheers/comment_confirm_delete.html'
     pk_url_kwarg = 'comment_id'
-
+    redirect_unauthenticated_users = True
+    raise_exception = confirmation_required_redirect
+    
     def get_success_url(self):
         return reverse('recipe-detail', kwargs={'recipe_id': self.object.recipe.id})
 
     def test_func(self, user):
         recipe = self.get_object()
         return recipe.author == user
+
+class ProcessLikeView(LoginRequiredMixin, UserPassesTestMixin, View):
+    http_method_name = ['post']
+    redirect_unauthenticated_users = True
+    raise_exception = confirmation_required_redirect
+    
+    def post(self, request, *args, **kwargs):
+        # self.kwargs.get('content_type_id')
+        # self.kwargs.get('object_id')
+        
+        like, created = Like.objects.get_or_create(
+            user=self.request.user,
+            content_type_id=self.kwargs.get('content_type_id'),
+            object_id=self.kwargs.get('object_id'),
+        )
+
+        if not created:
+            like.delete()
+
+        return redirect(self.request.META['HTTP_REFERER'])
+
+   	
+    def test_func(self, user):
+        return EmailAddress.objects.filter(user=user, verified=True).exists()
+    
 
 class ProfileView(DetailView):
     model = User 
