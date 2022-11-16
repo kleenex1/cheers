@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import (
+    ListView, 
+    DetailView, 
+    CreateView, 
+    UpdateView,
+    DeleteView,
+)
 from allauth.account.views import PasswordChangeView
 from cheers.models import Recipe
 from cheers.forms import RecipeForm
@@ -38,6 +44,23 @@ class RecipeCreateView(CreateView):
     # id가 파라미터로 전달(kwargs): 새로 생성된 오브젝트는 self.object로 접근가능
     def get_success_url(self):
         return reverse("recipe-detail", kwargs={"recipe_id": self.object.id})
+
+class RecipeUpdateView(UpdateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = "cheers/recipe_form.html"
+    pk_url_kwarg = "recipe_id"
+
+    def get_success_url(self):
+        return reverse("recipe-detail", kwargs={"recipe_id": self.object.id})
+
+class RecipeDeleteView(DeleteView):
+    model = Recipe
+    template_name = "cheers/recipe_confirm_delete.html"
+    pk_url_kwarg = "recipe_id"
+
+    def get_success_url(self):
+        return reverse('index')
 
 # 비밀번호 변경 페이지를 커스텀해주는 View 
 # 기존 PasswordChangeView를 상속받아서 자식 class에서 오버라이딩
