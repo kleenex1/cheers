@@ -33,9 +33,11 @@
   <div class="content-list max-content-width">
     <div class="header">
       <h2>{{ profile_user.nickname }}</h2>
-      <a class="cp-ic-button after circle morerecipe" href="#">
+      {% if user_reviews %}
+      <a class="cp-ic-button after circle morerecipe" href="{% url 'user-recipe-list' profile_user.id%}">
         레시피 전체보기
       </a>
+      {% endif %}
     </div>
 
     <div class="contents">

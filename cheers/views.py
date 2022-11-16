@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views.generic import (
     ListView, 
@@ -110,6 +110,23 @@ class ProfileView(DetailView):
         user_id = self.kwargs.get("user_id")
         context["user_recipes"] = Recipe.objects.filter(author__id=user_id).order_by("-created_at")[:4]
         return context
+
+class UserRecipesListView(ListView):
+    model = Recipe
+    template_name = "cheers/user_recipe_list.html"
+    context_object_name = "user_recipes"
+    paginate_by = 4
+
+    # 기본적으로 전체 Recipes들을 List로 전달한다. 따로 context에 전달하지 않아도됨
+    def get_queryset(self):
+        user_id = self.kwargs.get("user_id")
+        return Recipe.objects.filter(author__id=user_id).order_by("-created_at")
+        
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["profile_user"] = get_object_or_404(User, id=self.kwargs.get("user_id"))
+        return context
+
 
 # 비밀번호 변경 페이지를 커스텀해주는 View 
 # 기존 PasswordChangeView를 상속받아서 자식 class에서 오버라이딩
