@@ -18,13 +18,15 @@ from cheers.functions import confirmation_required_redirect
 
 # Create your views here.
 
-class IndexView(ListView):
-    model = Recipe
-    template_name = "cheers/index.html"
-    context_object_name = "recipes"
-    paginate_by = 4
-    ordering = ["-created_at"]
-    
+class IndexView(View):
+    def get(self, request, *args, **kwargs):
+        context = {}
+        context['latest_recipes'] = Recipe.objects.all().order_by("-created_at")[:4]
+        user = self.request.user
+        if user.is_authenticated:
+            context['latest_following_recipes'] = Recipe.objects.filter(author__followers=user).order_by("-created_at")[:4]
+        return render(request, 'cheers/index.html', context)
+
 class RecipeListView(ListView):
     model = Recipe
     context_object_name = 'recipes'
@@ -32,6 +34,14 @@ class RecipeListView(ListView):
     paginate_by = 8
     ordering = ['-created_at']
 
+class FollowingRecipeListView(LoginRequiredMixin, ListView):
+    model = Recipe
+    context_object_name = 'following_recipes'
+    template_name = 'cheers/following_recipe_list.html'
+    paginate_by = 8
+
+    def get_queryset(self):
+        return Recipe.objects.filter(author__followers=self.request.user)
 
 class RecipeDetailView(DetailView):
     model = Recipe 
