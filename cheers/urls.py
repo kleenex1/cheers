@@ -3,10 +3,14 @@ from . import views
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
+    # 레시피
     path('recipes/<int:recipe_id>/', views.RecipeDetailView.as_view(),name='recipe-detail'),
     path('recipes/create/', views.RecipeCreateView.as_view(), name="recipe-create"),
     path('recipes/<int:recipe_id>/edit/', views.RecipeUpdateView.as_view(), name='recipe-update'),
     path('recipes/<int:recipe_id>/delete/', views.RecipeDeleteView.as_view(), name="recipe-delete"),
+    # 유저 
     path('users/<int:user_id>/', views.ProfileView.as_view(), name="profile"),
     path('users/<int:user_id>/recipes/', views.UserRecipesListView.as_view(), name="user-recipe-list"),
+    path('setting-profile/', views.ProfileSettingView.as_view(), name='profile-setting'),
+    path('update-profile/', views.ProfileUpdateView.as_view(), name='profile-update'),
 ]

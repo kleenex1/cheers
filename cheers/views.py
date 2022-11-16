@@ -11,7 +11,7 @@ from braces.views import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.models import EmailAddress
 from allauth.account.views import PasswordChangeView
 from cheers.models import Recipe, User
-from cheers.forms import RecipeForm
+from cheers.forms import RecipeForm, ProfileForm
 from cheers.functions import confirmation_required_redirect
 # Create your views here.
 
@@ -128,8 +128,36 @@ class UserRecipesListView(ListView):
         return context
 
 
-# 비밀번호 변경 페이지를 커스텀해주는 View 
-# 기존 PasswordChangeView를 상속받아서 자식 class에서 오버라이딩
-class CustomPasswordChangeView(PasswordChangeView):
+class ProfileSettingView(LoginRequiredMixin, UpdateView):
+    model = User 
+    form_class = ProfileForm
+    template_name = 'cheers/profile_setting_form.html'
+
+    # updateview는 쿼리하나만 다루니까 get_object 오버라이드
+    # listview는 쿼리셋을 다루니까 get_queryset 오버라이드
+    def get_object(self, queryset=None):
+        return self.request.user
+    
     def get_success_url(self):
         return reverse("index")
+   
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    model = User 
+    form_class = ProfileForm
+    template_name = 'cheers/profile_update_form.html'
+
+    # updateview는 쿼리하나만 다루니까 get_object 오버라이드
+    # listview는 쿼리셋을 다루니까 get_queryset 오버라이드
+    def get_object(self, queryset=None):
+        return self.request.user
+    
+    def get_success_url(self):
+        return reverse("profile", kwargs={"user_id": self.request.user.id})
+
+
+
+# 비밀번호 변경 페이지를 커스텀해주는 View 
+# 기존 PasswordChangeView를 상속받아서 자식 class에서 오버라이딩
+class CustomPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
+    def get_success_url(self):
+        return reverse("profile", kwargs={"user_id": self.request.user.id})
