@@ -198,8 +198,60 @@ class ProfileView(DetailView):
     # url로 전달되는 파라미터는 self.kwargs로 접근가능하다.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        user_id = self.kwargs.get("user_id")
-        context["user_recipes"] = Recipe.objects.filter(author__id=user_id).order_by("-created_at")[:4]
+        user = self.request.user
+        profile_user_id = self.kwargs.get('user_id')
+        if user.is_authenticated:
+            context['is_following'] = user.following.filter(id=profile_user_id).exists()
+        context["user_recipes"] = Recipe.objects.filter(author__id=profile_user_id).order_by("-created_at")[:4]
+        return context
+
+# 요청에 따라 다르게 처리해줘야 해서 제네릭 뷰가 아닌 일반 뷰
+class ProcessFollowView(LoginRequiredMixin, UserPassesTestMixin, View):
+    http_method_name = ['post']
+
+    redirect_unauthenticated_users = True
+    raise_exception = confirmation_required_redirect
+
+    def post(self, request, *args, **kwargs):
+        user = self.request.user
+        profile_user_id = self.kwargs.get('user_id')
+        if user.following.filter(id=profile_user_id).exists():
+            user.following.remove(profile_user_id)
+        else:
+            user.following.add(profile_user_id)
+        return redirect('profile', user_id=profile_user_id)   
+
+    def test_func(self, user):
+        return EmailAddress.objects.filter(user=user, verified=True).exists()
+
+class FollowingListView(ListView):
+    model = User
+    template_name = 'cheers/following_list.html'
+    context_object_name = 'following'
+    paginate_by = 10
+
+    def get_queryset(self):
+        profile_user = get_object_or_404(User, pk=self.kwargs.get('user_id'))
+        return profile_user.following.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['profile_user_id'] = self.kwargs.get('user_id')
+        return context
+
+class FollowerListView(ListView):
+    model = User
+    template_name = 'cheers/follower_list.html'
+    context_object_name = 'followers'
+    paginate_by = 10
+
+    def get_queryset(self):
+        profile_user = get_object_or_404(User, pk=self.kwargs.get('user_id'))
+        return profile_user.followers.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['profile_user_id'] = self.kwargs.get('user_id')
         return context
 
 class UserRecipesListView(ListView):
