@@ -10,8 +10,8 @@ from django.views.generic import (
 from braces.views import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.models import EmailAddress
 from allauth.account.views import PasswordChangeView
-from cheers.models import Recipe, User
-from cheers.forms import RecipeForm, ProfileForm
+from cheers.models import Recipe, User, Comment
+from cheers.forms import RecipeForm, ProfileForm, CommentForm
 from cheers.functions import confirmation_required_redirect
 # Create your views here.
 
@@ -27,6 +27,11 @@ class RecipeDetailView(DetailView):
     model = Recipe 
     template_name = "cheers/recipe_detail.html"
     pk_url_kwarg = "recipe_id"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForm()
+        return context
 
 class RecipeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Recipe
@@ -97,6 +102,27 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         recipe = self.get_object()
         return recipe.author == user
 
+class CommentCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+    http_method_names = ['post']
+    model = Comment
+    form_class = CommentForm
+
+    redirect_unauthenticated_users = True
+    raise_exception = confirmation_required_redirect
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.recipe = Recipe.objects.get(id=self.kwargs.get('recipe_id'))
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('recipe-detail', kwargs={'recipe_id': self.kwargs.get('recipe_id')})
+
+    def test_func(self, user):
+        return EmailAddress.objects.filter(user=user, verified=True).exists()
+
+
+
 class ProfileView(DetailView):
     model = User 
     template_name = "cheers/profile.html"
@@ -117,7 +143,7 @@ class UserRecipesListView(ListView):
     context_object_name = "user_recipes"
     paginate_by = 4
 
-    # 기본적으로 전체 Recipes들을 List로 전달한다. 따로 context에 전달하지 않아도됨
+    # 기본적으로 전체 Recipes들을 List로 전달한다. 따로 context에 전달하지 않아도 됨
     def get_queryset(self):
         user_id = self.kwargs.get("user_id")
         return Recipe.objects.filter(author__id=user_id).order_by("-created_at")

@@ -13,4 +13,6 @@ urlpatterns = [
     path('users/<int:user_id>/recipes/', views.UserRecipesListView.as_view(), name="user-recipe-list"),
     path('setting-profile/', views.ProfileSettingView.as_view(), name='profile-setting'),
     path('update-profile/', views.ProfileUpdateView.as_view(), name='profile-update'),
+    # 댓글
+    path('recipes/<int:recipe_id>/comments/create/', views.CommentCreateView.as_view(), name='comment-create'),
 ]

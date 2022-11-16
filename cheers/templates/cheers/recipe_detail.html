@@ -10,7 +10,7 @@
 </style>
 
 {% load static %}
-
+{% load widget_tweaks %}
 {% block title %}{{ review.title }} | Cheers{% endblock title %}
 
 {% block content %}
@@ -38,6 +38,63 @@
       <p class="content">{{ recipe.content|linebreaksbr }}</p>
     </div>
 
+    <div class="like-comment-block">
+      <div class="like-comment-header">
+        <button class="like-button">
+          <img width="21px" src="{% static 'cheers/icons/ic-heart.svg' %}" alt="like icon">
+          <span> 좋아요 {{ recipe.likes.count }}</span>
+        </button>
+        <div class="comment-info">
+          <img src="{% static 'cheers/icons/ic-comment.svg' %}" alt="comment icon">
+          <span> 댓글 {{ recipe.comments.count }}</span>
+        </div>
+      </div>
+      <form class="comment-create-form" action="{% url 'comment-create' recipe.id %}" method="post">
+        {% csrf_token %}
+        {% if user.is_authenticated %}
+        {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cp-input" }}
+        <button class="cp-button small" type="submit">등록</button>
+        {% else %}
+        <a href="{% url 'account_login' %}?next={% url 'recipe-detail' recipe.id %}">
+          {{ form.content|attr:"placeholder:댓글 작성을 위해 로그인을 해주세요."|add_class:"cp-input"|attr:"disabled" }}
+        </a>
+        <button class="cp-button small" type="submit" disabled>등록</button>
+        {% endif %}
+      </form>
+      <div class="comment-list">
+        {% for comment in recipe.comments.all %}
+          <div class="comment">
+            <div class="comment-header">
+              <a href="{% url 'profile' comment.author.id %}">
+                <div class="author">
+                  <div class="cp-avatar" style="background-image: url('{{ comment.author.profile_pic.url }}')"></div>
+                  <span>{{ comment.author.nickname }}</span>
+                </div>
+              </a>
+              {% if user == comment.author %}
+                <div class="buttons">
+                  <a href="#">삭제</a>
+                  <span> | </span>
+                  <a href="#">수정</a>
+                </div>
+              {% endif %}
+            </div>
+            <div class="comment-content">
+              {{ comment.content|linebreaksbr }}
+            </div>
+            <div class="comment-footer">
+              <div class="comment-date">
+                {{ comment.dt_created|date:"Y년 n월 j일" }}
+              </div>
+              <button class="like-button">
+                <img width="16px" src="{% static 'cheers/icons/ic-heart.svg' %}" alt="like icon">
+                <span> 좋아요 {{ comment.likes.count }}</span>
+              </button>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
     <div class="footer">
       <a class="back-link" href="{% url 'index' %}">&lt; 목록으로</a>
       {% if recipe.author == user %}
