@@ -10,23 +10,23 @@ from django.views.generic import (
 from braces.views import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.models import EmailAddress
 from allauth.account.views import PasswordChangeView
-from cheers.models import Recipe
+from cheers.models import Recipe, User
 from cheers.forms import RecipeForm
 from cheers.functions import confirmation_required_redirect
 # Create your views here.
 
 class IndexView(ListView):
     model = Recipe
-    template_name = 'cheers/index.html'
+    template_name = "cheers/index.html"
     context_object_name = "recipes"
     paginate_by = 4
-    ordering = ['-created_at']
+    ordering = ["-created_at"]
     
 
 class RecipeDetailView(DetailView):
     model = Recipe 
-    template_name = 'cheers/recipe_detail.html'
-    pk_url_kwarg = 'recipe_id'
+    template_name = "cheers/recipe_detail.html"
+    pk_url_kwarg = "recipe_id"
 
 class RecipeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Recipe
@@ -91,14 +91,28 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     raise_exception = True
 
     def get_success_url(self):
-        return reverse('index')
+        return reverse("index")
 
     def test_func(self, user):
         recipe = self.get_object()
         return recipe.author == user
 
+class ProfileView(DetailView):
+    model = User 
+    template_name = "cheers/profile.html"
+    pk_url_kwarg = "user_id"
+    context_object_name = "profile_user"
+
+    # context는 dic형태인데 여기에 추가해주면된다.
+    # url로 전달되는 파라미터는 self.kwargs로 접근가능하다.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user_id = self.kwargs.get("user_id")
+        context["user_recipes"] = Recipe.objects.filter(author__id=user_id).order_by("-created_at")[:4]
+        return context
+
 # 비밀번호 변경 페이지를 커스텀해주는 View 
 # 기존 PasswordChangeView를 상속받아서 자식 class에서 오버라이딩
 class CustomPasswordChangeView(PasswordChangeView):
     def get_success_url(self):
-        return reverse('index')
+        return reverse("index")

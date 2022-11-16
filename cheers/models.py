@@ -12,6 +12,10 @@ class User(AbstractUser):
         error_messages={'unique': '이미 사용중인 닉네임입니다.'},
     )
     
+    profile_pic = models.ImageField(default="default_profile.png", upload_to="profile_pics")
+    
+    introduce = models.CharField(max_length=80, blank=True)
+
     def __str__(self):
         return self.email
 

@@ -1,3 +1,13 @@
+<style>
+  .profile {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
 
 {% load static %}
 
@@ -9,7 +19,8 @@
     <div class="review-info">
       <h1 class="title">{{ recipe.title }}</h1>
       <div class="author">
-        <a class="review-author" href="#">
+        <a class="review-author" href="{% url 'profile' recipe.author.id %}">
+          <div class="profile" style="background-image: url('{{ recipe.author.profile_pic.url }}')"></div>
           <span>{{ recipe.author.nickname }}</span>
         </a>
       </div>
