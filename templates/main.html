@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
     <script defer src="./js/main.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -26,13 +27,14 @@
     <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
     
 </head>
-<body class="">
+<body>
+  <!-- Header -->
     <header class="fixed-top" >
         <nav style="height: 150px;" class="navbar navbar-expand-lg bg-black navbar-dark ">
             <div class="container "> 
                 <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14">
                 <p class="navbar-brand mb-0 text-white">
-                  <!-- <i class="fa d-inline fa-lg fa-stop-circle"></i> BRAND </p> -->
+                 
               </button>
               <div class="collapse navbar-collapse" id="navbar14">
                 <!-- 왼쪽 메뉴 -->
@@ -42,7 +44,7 @@
                   <li class="nav-item"> <a class="nav-link text-white" href="#">Recipe</a> </li>
                 </ul>
                 <!-- 로고 -->
-                <img style="width: 110px;" src="./img/cheers_logo.png" alt="">
+                <img style="width: 110px;" src="/static/image/cheers_logo.png" alt="">
                 <!-- 오른쪽 메뉴 -->
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item mx-1"> <a class="nav-link" href="#">
@@ -60,7 +62,8 @@
           </nav>
           <!-- second nav -->
           <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
-            <div class="container justify-content-center"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar9">
+            <div class="container justify-content-center">
+              <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar9">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse text-center justify-content-center" id="navbar9">
@@ -83,86 +86,126 @@
       <!-- BADGES -->
       <div class="badges">
         <div class="badge">
-          <img style="width: 200px; height:300px;" src="./img/광고1.png" alt="badge">
+          <img style="width: 200px; height:300px;" src="/static/image/광고1.png" alt="badge">
         </div>
         <div class="badge">
-          <img style="width: 200px; height:130px;" src="./img/광고2.png" alt="badge">
+          <img style="width: 200px; height:130px;" src="/static/image/그림3-1.png" alt="badge">
         </div>
       </div>
 
-  </header>
+    </header>
 
-  <!--VISUAL-->
- <section class="visual">
-  <div class="inner">
-    <div class="title fade-in">
-      <img src="./img/main text.png" alt="" class="title_img">
-      <img style="width: 700px; height: 650px;" src="./img/main.png" alt="NEGRONI">
-      <a style="color: #fff;" href="javascript:void(0)" class="btn btn--red">View more</a>
-    </div>
-    <div class="fade-in">
-      <img src="./img/칵테일4.png" alt="new OTMEAL LATTE" class="cup1 image">
-      <img style="width: 400px; height:150px;" src="./img/cup1 text.png" alt="NEGRONI 칵테일1" class="cup1 text">
-    </div>
-    <div class="fade-in">
-      <img style="width: 350px; height:450px;" src="./img/칵테일5.png" alt="new STARBUCKS CARAMEL CRUMBLE MOCHA" class="cup2 image">
-      <img style="width: 420px; " src="./img/cup2 text.png" alt="NEGRONI 칵테일2" class="cup2 text">
-    </div>
-    <!-- <div class="fade-in">
-      <img src="./img/visual_spoon.png" alt="Spoon" class="spoon" />
-    </div> -->
-  </div>
- </section>
-
-<!--PROMOTION-->
-<div class="promotion">
-
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a3dc2a149613261.62ea8ba1458f7.jpg" alt="1">
-        <a href="javascript:void(0)" class="btn">자세히 보기</a>
+  
+ <!--VISUAL-->
+  <section class="visual">
+    <div class="inner">
+      <div class="title fade-in">
+        <img src="/static/image/main.png" alt="" class="title_img">
+        <img style="width: 700px; height: 650px;" src="./img/main.png" alt="NEGRONI">
+        <a style="color: #fff;" href="javascript:void(0)" class="btn btn--red">View more</a>
       </div>
-      <div class="swiper-slide">
-        <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c1369a149613261.62ea8b9f966c1.jpg" alt="2">
-        <a href="javascript:void(0)" class="btn">자세히 보기</a>
+      <div class="fade-in">
+        <img src="/static/image/칵테일4.png" alt="new OTMEAL LATTE" class="cup1 image">
+        <img style="width: 400px; height:150px;" src="./img/cup1 text.png" alt="NEGRONI 칵테일1" class="cup1 text">
       </div>
-      <div class="swiper-slide">
-        <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/6dcb2b149613261.62f120888af14.jpg" alt="3">
-        <a href="javascript:void(0)" class="btn">자세히 보기</a>
-      </div>
-      <div class="swiper-slide">
-        <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/5d28ab149613261.62ea8ba05e03a.jpg" alt="4">
-        <a href="javascript:void(0)" class="btn">자세히 보기</a>
-      </div>
-      <div class="swiper-slide">
-        <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/da8786149613261.62ea8ba05e93d.jpg" alt="5">
-        <a href="javascript:void(0)" class="btn">자세히 보기</a>
+      <div class="fade-in">
+        <img style="width: 350px; height:450px;" src="/static/image/칵테일5.png" alt="NEGRONI 칵테일2" class="cup2 image">
+        <img style="width: 420px; " src="./img/cup2 text.png" alt="NEGRONI 칵테일2" class="cup2 text">
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="swiper-pagination"></div>
 
-  <div class="swiper-prev">
-    <span class="material-symbols-outlined">
-      arrow_back
-      </span>
-  </div>
-  <div class="swiper-next">
-    <span class="material-symbols-outlined">
-      arrow_forward
-      </span>
-  </div>
+  <section class="notice">
 
-  </div>
+    <!--NOTICE LINE-->
+    <div class="notice-line">
+      <div class="bg-left"></div>
+      <div class="bg-right"></div>
+      <div class="inner">
+        
+        <div class="inner__left">
+          <h2>공지사항</h2>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)">술을 건강하게 마시는 방법 함께 알아보기</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)">[당첨자 발표] 2022 칵테일 나만의 레시피 이벤트</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)">코리아 칵테일 마스터 애플리케이션 버전 업데이트 안내</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)">2022 크리스마스와 함께하는 칵테일 이용 안내</a>
+                </div>
+              </div>
+            </div>
+          <a href="javascript:void(0)" class="notice-line__more">
+            <span class="material-symbols-outlined">
+              add_circle
+              </span>
+          </a>
+        </div>
+        <div class="inner__right">
+          <h2>칵테일 프로모션</h2>
+          <div class="toggle-promotion open">
+            <span class="material-symbols-outlined">arrow_drop_down_circle</span>
+          </div>
+        </div>
 
-</section>
+      </div>
+    </div>
+     <!--PROMOTION-->
+     <div class="promotion">
 
-<!--요리와 술 설명 메인 사진 -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a3dc2a149613261.62ea8ba1458f7.jpg" alt="1">
+            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+          </div>
+          <div class="swiper-slide">
+            <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c1369a149613261.62ea8b9f966c1.jpg" alt="2">
+            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+          </div>
+          <div class="swiper-slide">
+            <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/6dcb2b149613261.62f120888af14.jpg" alt="3">
+            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+          </div>
+          <div class="swiper-slide">
+            <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/5d28ab149613261.62ea8ba05e03a.jpg" alt="4">
+            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+          </div>
+          <div class="swiper-slide">
+            <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/da8786149613261.62ea8ba05e93d.jpg" alt="5">
+            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-prev">
+        <span class="material-symbols-outlined">
+          arrow_back
+          </span>
+      </div>
+      <div class="swiper-next">
+        <span class="material-symbols-outlined">
+          arrow_forward
+          </span>
+      </div>
+
+      </div>
+
+  </section>
+
+    <!--요리와 술 설명 메인 사진 -->
     <!-- cocktails and special stories -->
     <div class="bg-black d-flex justify-content-center">
-      <img src="./img/section title.png" alt="">
+      <img src="/static/image/section title.png" alt="">
     </div>
     <!-- 요리와 술 _ 일본 편  -->
     <!-- 첫번째 -->
@@ -175,7 +218,7 @@
             </p>
           </div>
           <div class="p-0 col-lg-5"> 
-            <img  class="d-block rounded-3" src="./img/사진1.PNG"> </div>
+            <img  class="d-block rounded-3" src="/static/image/사진1.PNG"> </div>
         </div>
       </div>
     </div>
@@ -184,7 +227,7 @@
       <div class="container">
         <div class="row">
           <div class="d-flex flex-column justify-content-center p-3 col-lg-7"> 
-            <img  class="d-block rounded-3" src="./img/사진2.PNG"> </div>
+            <img  class="d-block rounded-3" src="/static/image/사진2.PNG"> </div>
           </div>
           <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2">
             <p class="lead mb-0">
@@ -204,10 +247,12 @@
             </p>
           </div>
           <div class="p-0 col-lg-5"> 
-            <img  class="d-block rounded-3" src="./img/사진3.PNG"> </div>
+            <img  class="d-block rounded-3" src="/static/image/사진3.PNG"> </div>
         </div>
       </div>
     </div>
+
+
 
     <!-- 술 판매 정보 -->
     <div class="py-5 text-center" style="height: 700px;; background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/4ce18f128812339.61d47893bfe9c.png');background-size:cover;">
@@ -220,7 +265,7 @@
         </div>
       </div>
     </div>
-    
+
 
     <!-- 칵테일 레시피 홍보 -->
     <div class="py-3 text-center">
@@ -266,54 +311,56 @@
         </div>
       </div>
     </div>
-    
 
     <!-- enjoy your time here -->
     <div class="bg-black">
       <div class="d-flex justify-content-center align-items-center">
-        <img src="./img/cheers_1.png" alt="">
+        <img src="/static/image/cheers_1.png" alt="">
       </div>
     </div>
-<!-- footer -->
-<div class="py-3" >
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <img style="width: 9.375rem;" src="./img/cheers_logo.png" alt="">
+
+
+
+    <!-- footer -->
+    <div class="py-3" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <img style="width: 150px" src="/static/image/cheers_logo.png" alt="">
+          </div>
+        </div>
+        <pre></pre>
+        <div class="row">
+          <div class="d-flex justify-content-center">
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+           <div class="addthis_inline_share_toolbox"></div>
+          </div>
+        </div>
+        <pre></pre>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0">© 2022 All rights reserved</p>
+          </div>
+        </div>
       </div>
     </div>
-    <pre></pre>
-    <div class="row">
-      <div class="d-flex justify-content-center">
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-       <div class="addthis_inline_share_toolbox"></div>
-      </div>
-    </div>
-    <pre></pre>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <p class="mb-0">© 2022 All rights reserved</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
 
+    
 
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6370773bcd26bc2f"></script>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6370773bcd26bc2f"></script>
+            
+    
 
-        
-
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 </body>
