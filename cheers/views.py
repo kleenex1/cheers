@@ -63,22 +63,39 @@ class RecipeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return EmailAddress.objects.filter(user=user, verified=True).exists()
             
 
-class RecipeUpdateView(UpdateView):
+class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Recipe
     form_class = RecipeForm
     template_name = "cheers/recipe_form.html"
     pk_url_kwarg = "recipe_id"
 
+    raise_exception = True
+
     def get_success_url(self):
         return reverse("recipe-detail", kwargs={"recipe_id": self.object.id})
+    
+    # TestMixin으로 User 확인해주기
+    # html에서 유저가 본인 게시물인지 확인을 해서 버튼을 숨겨놨어도
+    # 주소창을 통해서 해당 글을 수정하려고 하는 것을 막기 위함
+    # 부적절한 접근은 403으로 막아준다. --> rasise_exception = True
+    # 로그인이 유무랑 상관없이 403으로 redirect_unauthenticated_users = False (default값)
+    def test_func(self, user):
+        recipe = self.get_object()
+        return recipe.author == user
 
-class RecipeDeleteView(DeleteView):
+class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Recipe
     template_name = "cheers/recipe_confirm_delete.html"
     pk_url_kwarg = "recipe_id"
 
+    raise_exception = True
+
     def get_success_url(self):
         return reverse('index')
+
+    def test_func(self, user):
+        recipe = self.get_object()
+        return recipe.author == user
 
 # 비밀번호 변경 페이지를 커스텀해주는 View 
 # 기존 PasswordChangeView를 상속받아서 자식 class에서 오버라이딩
