@@ -121,7 +121,30 @@ class CommentCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     def test_func(self, user):
         return EmailAddress.objects.filter(user=user, verified=True).exists()
 
+class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'cheers/comment_update_form.html'
+    pk_url_kwarg = 'comment_id'
 
+    def get_success_url(self):
+        return reverse('recipe-detail', kwargs={'recipe_id': self.object.recipe.id})
+    
+    def test_func(self, user):
+        recipe = self.get_object()
+        return recipe.author == user
+
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Comment
+    template_name = 'cheers/comment_confirm_delete.html'
+    pk_url_kwarg = 'comment_id'
+
+    def get_success_url(self):
+        return reverse('recipe-detail', kwargs={'recipe_id': self.object.recipe.id})
+
+    def test_func(self, user):
+        recipe = self.get_object()
+        return recipe.author == user
 
 class ProfileView(DetailView):
     model = User 

@@ -52,7 +52,7 @@
       <form class="comment-create-form" action="{% url 'comment-create' recipe.id %}" method="post">
         {% csrf_token %}
         {% if user.is_authenticated %}
-        {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cp-input" }}
+        {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cp-input"}}
         <button class="cp-button small" type="submit">등록</button>
         {% else %}
         <a href="{% url 'account_login' %}?next={% url 'recipe-detail' recipe.id %}">
@@ -73,9 +73,9 @@
               </a>
               {% if user == comment.author %}
                 <div class="buttons">
-                  <a href="#">삭제</a>
+                  <a href="{% url 'comment-delete' comment.id %}">삭제</a>
                   <span> | </span>
-                  <a href="#">수정</a>
+                  <a href="{% url 'comment-update' comment.id %}">수정</a>
                 </div>
               {% endif %}
             </div>
