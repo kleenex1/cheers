@@ -34,6 +34,9 @@ urlpatterns = [
     path("email-confirmation", 
     TemplateView.as_view(template_name="account/email_confirmation.html") 
     ,name="account_email_confirmation"),
+    path("email-confirmation-required", 
+    TemplateView.as_view(template_name="account/email_confirmation_required.html") 
+    ,name="account_email_confirmation_required"),
     path("password_change", 
     TemplateView.as_view(template_name="account/password_change.html") 
     ,name="password_change"),
