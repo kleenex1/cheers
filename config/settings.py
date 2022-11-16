@@ -66,7 +66,10 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            os.path.join(BASE_DIR / "templates"),
+            os.path.join(BASE_DIR / "wishlist", "templates/"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -120,6 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/uploads/"
 
@@ -144,7 +149,7 @@ ACCOUNT_SIGNUP_REDIRECT_URL = "profile-setting"
 # 로그인시 redirect할 url 설정
 LOGIN_REDIRECT_URL = "index"
 # 웹서비스 로그인 URL : LoginRequiredMixin이 실행되면 로그인을 하도록 아래 url로 설정
-LOGIN_URL = 'account_login'
+LOGIN_URL = "account_login"
 # 로그아웃시 redirect가 Allauth 기본 셋팅(로그아웃화면이뜸)으로 가는데 거치지 않고 바로 로그아웃 할 수 있게해줌.
 ACCOUNT_LOGOUT_ON_GET = True
 # 이메일로 로그인 하는 방법 (default = 유저네임으로 로그인, 둘다 허용하는 방법 = username_email)
