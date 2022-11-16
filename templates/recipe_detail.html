@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEERS</title>
+  
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- <link rel="stylesheet" href="./css/main.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <!-- <script defer src="./js/main.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
+    <style>
+    .ico {
+      position: absolute;
+      left: 0;
+      /* right:; */
+      bottom: 0;
+      padding: 2px 12px;
+      font-size: 11px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.7);
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-attachment: scroll;
+      background-image: none;
+      background-size: auto;
+      background-origin: border-box;
+      box-sizing: border-box;
+      line-height: 20px;
+    }
+    </style>
+    
+</head>
+
+<body style="height: 3000px;">
+    <header class="" >
+        <nav style="height: 150px;" class="navbar navbar-expand-lg bg-black navbar-dark ">
+            <div class="container "> 
+                <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14">
+                <p class="navbar-brand mb-0 text-white">
+                  <!-- <i class="fa d-inline fa-lg fa-stop-circle"></i> BRAND </p> -->
+              </button>
+              <div class="collapse navbar-collapse" id="navbar14">
+                <!-- 왼쪽 메뉴 -->
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"> <a class="nav-link text-white" href="#">Home</a> </li>
+                  <li class="nav-item"> <a class="nav-link text-white" href="#">About</a> </li>
+                  <li class="nav-item"> <a class="nav-link text-white" href="#">Recipe</a> </li>
+                </ul>
+                <!-- 로고 -->
+                <img style="width: 110px;" src="./img/cheers_logo.png" alt="">
+                <!-- 오른쪽 메뉴 -->
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item mx-1"> <a class="nav-link" href="#">
+                      <i class="text-white fa fa-github fa-fw fa-lg"></i>
+                    </a> </li>
+                  <li class="nav-item mx-1"> <a class="nav-link" href="#">
+                      <i class="text-white fa fa-gitlab fa-fw fa-lg"></i>
+                    </a> </li>
+                  <li class="nav-item mx-1"> <a class="nav-link" href="#">
+                      <i class="text-white fa fa-bitbucket fa-fw fa-lg"></i>
+                    </a> </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- second nav -->
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+            <div class="container justify-content-center"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar9">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-center justify-content-center" id="navbar9">
+                <ul class="navbar-nav">
+                  <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
+                    <b> BRAND</b></a> </li>
+                  <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
+                    <b> BRAND</b></a> </li>
+                  <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-white" href="#">
+                      <b> BRAND</b></a> </li>
+                  <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
+                    <b> BRAND</b></a> </li>
+                  <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
+                    <b> BRAND</b></a> </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+<!-- 칵테일 레시피 디테일 페이지 -->
+<!-- 시작 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 p-3" ></div>
+    </div>
+<!-- 레시피 디테일 페이지 title -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style="font-weight: 700;" class="d-flex justify-content-center" >Peach Crush</h1>
+        </div>
+      </div>
+<!-- 레시피 디테일 페이지 메인 사진  -->
+    <div class="row">
+      <div class="col-md-12 p-3">
+        <img class="img-fluid d-block" src="https://shakit.co.kr/data/item/1619145939/2049028623_0OCciv38_35efd09f8ced676b6131e5fd120f094b25c24c6f.png"> </div>
+    </div>
+  </div>
+</div>
+<!-- 레시피 디테일 추천 소개 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-block d-flex justify-content-center"">
+        <img src="https://shakit.co.kr/data/item/1619145939/02_67CU7YWQ642U64W47Yq4_7YWM7Iqk7Yq46riw.png"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 레시피 준비물 제목 -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 style="font-weight: 700;" class="d-flex justify-content-center" >Peach Crush 재료 소개</h1>
+    </div>
+  </div>
+
+
+
+<!-- 레시피 준비물 소개 -->
+
+<!-- 레시피 준비물 소개 1 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="p-0 col-lg-5 order-2 order-lg-1">
+        <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1594894751/thumb-7Iuk67KE7KeA6rGw_332x332.jpg"> </div>
+      <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+        <p class="lead mb-0">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 레시피 준비물 소개 2 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="p-0 col-lg-5 order-2 order-lg-1">
+        <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1629770150/thumb-67O17Iit7JWE7Iuc659_7KCV66m0_332x332.jpg"> </div>
+      <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+        <p class="lead mb-0">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 레시피 준비물 소개 3 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="p-0 col-lg-5 order-2 order-lg-1">
+        <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627265146/thumb-7ImQ7J207YK36657Iqk_332x332.jpg"> </div>
+      <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+        <p class="lead mb-0">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 레시피 준비물 소개 4 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="p-0 col-lg-5 order-2 order-lg-1">
+        <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627445418/thumb-7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Jik66CM7KeA7KO87Iqk_332x332.jpg"> </div>
+      <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+        <p class="lead mb-0">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 레시피 준비물 소개 5 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="p-0 col-lg-5 order-2 order-lg-1">
+        <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1629771506/thumb-7YGs66CM67Kg66as7KO87Iqk_332x332.jpg"> </div>
+      <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+        <p class="lead mb-0">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 레시피 준비물 소개 6 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="p-0 col-lg-5 order-2 order-lg-1">
+        <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627609802/thumb-6rG07Jik66CM7KeA_332x332.jpg"> </div>
+      <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+        <p class="lead mb-0">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  레시피 만드는 방법 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><b>한잔 칵테일 만드는 방법</b></h5>
+            <h6 class="card-subtitle my-2 text-muted">Subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 칵테일 레시피 만드는 영상  -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-body">
+          <h5 class="card-title"><b>Title</b></h5>
+          <iframe width="950" height="600" src="https://www.youtube.com/embed/5px2kPUMX-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--후기 카드 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <img class="img-fluid d-block" src="https://shakit.co.kr/data/item/1619145939/2049028623_7bFUeLOt_bd00530ae16a1bd79ea952075d8f51d5eb259362.png"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 상품 후기 -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>상품 소셜 후기</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 상품 소셜 후기  -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="thumb_row">
+          <span class="ico">인스타그램</span>
+          <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_yBx4LUOr_8c75484a71925dfe80220549ce8f626e784b93fe.jpg"></div>
+        </div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_10YO3bJz_59cd0d6e1eec15339e434a4612613553928a6a64.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_0QiuURO7_da4aac9d8cb1c5705cf03d0095d2082bce181ebb.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://shakit.co.kr/data/file/bestreview/3068359458_4apNqBud_3e32c61f04757964c8131e8fd43c7fb3558813d9.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_Vkryc12K_8c795c77b509748c289de944f4cab33696f5c1cc.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_HYSK8W7E_a533b79ea03be3fdf4ab7a823a96766aff09b453.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_5FOx3rRH_532fc825b8caf85afd15a676da7a0c2ef571b93f.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_QCgTwvfF_896b32d2c0396ab48dea0f6787adf65e8fdb10cc.jpg"></div>
+    </div>
+  </div>
+</div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_w35TeaYN_e2288f86512172f8e9dc70d63efa4fa54e501a12.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_janV3Rgv_ac1134cb5f16945a7f98d29895f22981b80bc019.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_VcGjuJ4R_a7b827e20c9df3d2e07f51b466023b8412c6d8d0.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_BQW0wDKx_8003b83994d00e5a1f7f0944fd978738f84a73a6.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_YZrxuK4a_82705cd8c0b1c629b5f51145ae7a97177af0b935.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_D3FQmjui_4be1299d6537b6f8abb15ad5738c6edda362d70d.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_1M0PgXFk_40a3b5a0da3e91f88983d03afab3694627b68bc2.jpg"></div>
+      <div class="col-md-3">
+        <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_VCpcxBL4_36a1fe2291e1e27baa9daec453293f368dadd659.jpg" ></div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+          
+  
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
