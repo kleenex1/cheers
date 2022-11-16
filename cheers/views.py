@@ -25,6 +25,13 @@ class IndexView(ListView):
     paginate_by = 4
     ordering = ["-created_at"]
     
+class RecipeListView(ListView):
+    model = Recipe
+    context_object_name = 'recipes'
+    template_name = 'cheers/recipe_list.html'
+    paginate_by = 8
+    ordering = ['-created_at']
+
 
 class RecipeDetailView(DetailView):
     model = Recipe 
