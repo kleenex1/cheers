@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey
 from .validators import validate_no_special_characters
 # Create your models here.
 
@@ -13,9 +15,10 @@ class User(AbstractUser):
     )
     
     profile_pic = models.ImageField(default="default_profile.png", upload_to="profile_pics")
-    
     introduce = models.CharField(max_length=80, blank=True)
 
+    following = models.ManyToManyField('self', symmetrical=False, blank=True)
+    
     def __str__(self):
         return self.email
 
@@ -33,3 +36,29 @@ class Recipe(models.Model):
     
     def __str__(self):
         return self.title
+
+    # 이 Meta 옵션을 사용하면 view에서 모든 정렬 로직을 생략해도 된다.
+    # view에서 다시 정렬 로직을 추가하면 덮어써짐.
+    # 추가 후 마이그레이션 필요.
+    # class Meta:
+    #     ordering = ["-created_at"]
+
+class Comment(models.Model):
+    content = models.TextField(max_length=300, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.content[:20]
+
+class Like(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    liked_object = GenericForeignKey('content_type', 'object_id')
+
+    def __str__(self):
+        return f"({self.user}, {self.liked_object})"
