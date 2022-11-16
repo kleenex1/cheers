@@ -1,7 +1,13 @@
 
 {% load widget_tweaks %}
 
-{% block title %}새 포스트 작성 | Cheers{% endblock title %}
+{% block title %}
+  {% if review %}
+  {{ review.title }}
+  {% else %}
+    새 포스트 작성
+  {% endif %} | Cheers
+{% endblock title %}
 
 {% block content %}
 <main class="site-body">
@@ -21,6 +27,9 @@
     </div>
     <div class="file">
       <div class="file-content">
+        {% if recipe.image1 %}
+          <img src="{{ recipe.image1.url }}">
+        {% endif %}
         <div>
           {{ form.image1 }}
           {% for error in form.image1.errors %}
@@ -31,6 +40,9 @@
     </div>
     <div class="file">
       <div class="file-content">
+        {% if recipe.image2 %}
+        <img src="{{ recipe.image2.url }}">
+        {% endif %}
         <div>
           {{ form.image2 }}
           {% for error in form.image2.errors %}
@@ -41,6 +53,9 @@
     </div>
     <div class="file">
       <div class="file-content">
+        {% if recipe.image3 %}
+        <img src="{{ recipe.image3.url }}">
+        {% endif %}
         <div>
           {{ form.image3 }}
           {% for error in form.image3.errors %}
@@ -51,7 +66,10 @@
     </div>
 
     <div class="buttons">
-      <a class="cp-button secondary cancel" href="{% url 'index' %}">취소</a>
+      <a class="cp-button secondary cancel" 
+      href="{% if recipe %}{% url 'recipe-detail' recipe.id %}{% else %}{% url 'index' %}{% endif %}">
+      취소
+      </a>
       <button class="cp-button submit" type="submit">완료</button>
     </div>
   </form>
