@@ -21,12 +21,12 @@
         <div class="error-message">{{error}}</div>
         {% endfor %}
       </div>
-      <div>
+      {% comment %} <div>
         {{ form.nickname|add_class:"add_class"|attr:"placeholder:닉네임 (Cheers에서 사용되는 이름입니다)"|add_error_class:"error_class"}}
         {% for error in form.nickname.errors %}
         <div class="error-message">{{error}}</div>
         {% endfor %}
-      </div>
+      </div> {% endcomment %}
       <div>
         {{ form.password1|add_class:"add_class"|attr:"placeholder: 비밀번호"|add_error_class:"error_class"}}
         {% for error in form.password1.errors %}

@@ -58,6 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "cheers.middleware.ProfileSetupMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -138,9 +139,9 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
-
+# 회원가입시 redirect할 url 설정
+ACCOUNT_SIGNUP_REDIRECT_URL = "profile-setting"
 # 로그인시 redirect할 url 설정
-ACCOUNT_SIGNUP_REDIRECT_URL = "index"
 LOGIN_REDIRECT_URL = "index"
 # 웹서비스 로그인 URL : LoginRequiredMixin이 실행되면 로그인을 하도록 아래 url로 설정
 LOGIN_URL = 'account_login'
@@ -152,7 +153,8 @@ ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 # 내가 정의한 SignupForm을 쓰겠다고 settings에 알려줌
-ACCOUNT_SIGNUP_FORM_CLASS = "cheers.forms.SignupForm"
+# ACCOUNT_SIGNUP_FORM_CLASS = "cheers.forms.SignupForm" 닉네임 필드를 따로 받으려고 처음에 했던 코드 주석처리
+
 # 회원가입시 폼에 오류가 나더라도 비밀번호는 그대로 남아있게 설정
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True
 # 이메일 인증 관련 설정(mandatory, optional(default값), none)
