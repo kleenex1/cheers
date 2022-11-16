@@ -9,6 +9,8 @@ from django.views.generic import (
     DeleteView,
 )
 from django.contrib.contenttypes.models import ContentType
+# from django.http import HttpResponse
+from django.db.models import Q
 from braces.views import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.models import EmailAddress
 from allauth.account.views import PasswordChangeView
@@ -17,6 +19,29 @@ from cheers.forms import RecipeForm, ProfileForm, CommentForm
 from cheers.functions import confirmation_required_redirect
 
 # Create your views here.
+
+# def search_view(request):
+#     query = request.GET.get('query', '')
+#     return HttpResponse(f"검색어: {query}")
+
+class SearchView(ListView):
+    model = Recipe
+    context_object_name = 'search_results'
+    template_name = 'cheers/search_results.html'
+    paginate_by = 8
+
+    def get_queryset(self):
+        query = self.request.GET.get('query', '')
+        return Recipe.objects.filter(
+            Q(title__icontains=query)|
+            Q(content__icontains=query)
+        )
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('query', '')
+        return context
+
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
