@@ -18,50 +18,13 @@
       <h2>{{ profile_user.nickname }}님의 리뷰 ({{ paginator.count }})</h2>
     </div>
 
-    <div class="contents">
-      {% for recipe in user_recipes %}
-        <a href="{% url 'recipe-detail' recipe.id %}">
-          <div class="cp-card content">
-            <div class="thumb" style="background-image: url('{{ recipe.image1.url }}');"></div>
-            <div class="body">
-              <h2 class="title">{{ recipe.title }}</h2>
-              <date class="date">{{ recipe.created_at|date:"Y년 n월 j일" }}</date>
-              <div class="metadata">
-                <div class="recipe-author">
-                  <div class="profile" style="background-image: url('{{ recipe.author.profile_pic.url }}')"></div>
-                  <span>{{ recipe.author.nickname }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      {% empty %}
-        <p class="empty">아직 리뷰가 없어요 :(</p>
-      {% endfor %}
-    </div>
+    {% include 'components/recipe_list.html' with recipes=user_recipes empty_message="아직 레시피가 없어요" %}
+
 
     <div class="wrap-pagination">    
       <a class="cp-ic-button circle backbutton" href="{% url 'profile' profile_user.id %}">프로필로 돌아가기</a>
       {% if is_paginated %}
-        <ul class="pagination">
-          {% if page_obj.has_previous %}
-            <li><a href="?page=1">처음</a></li>
-            <li><a href="?page={{ page_obj.previous_page_number }}">이전</a></li>
-          {% endif %}
-
-          {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-              <li class="current">{{ num }}</li>
-            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-              <li><a href="?page={{ num }}">{{ num }}</a></li>
-            {% endif %}
-          {% endfor %}
-
-          {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}">다음</a></li>
-            <li><a href="?page={{ page_obj.paginator.num_pages }}">마지막</a></li>
-          {% endif %}
-        </ul>
+        {% include 'components/pagination.html' with page_obj=page_obj %}
       {% endif %}
     </div>
   </div>

@@ -1,0 +1,17 @@
+
+{% block title %} 창작 레시피 목록 ({{ paginator.count }}) | Cheers{% endblock title %}
+
+{% block content %}
+<main class="site-body">
+  <div class="content-list max-content-width">
+    <div class="header">
+      <h2>리뷰 목록</h2>
+    </div>
+    {% include 'components/recipe_list.html' with recipes=recipes empty_message="아직 레시피가 없어요" %}
+  
+    {% if is_paginated %}
+      {% include 'components/pagination.html' with page_obj=page_obj %}
+    {% endif %}
+  </div>
+</main>
+{% endblock content %}

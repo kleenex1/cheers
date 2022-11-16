@@ -1,0 +1,22 @@
+<div class="contents">
+  {% for recipe in recipes %}
+  <a href="{% url 'recipe-detail' recipe.id %}">
+    <section class="cp-card content">
+      <div class="thumb" style="background-image: url('{{ recipe.image1.url }}');"></div>
+      <div class="body">
+        <span class="cp-chip green">{{ recipe.title }}</span>
+        <h2 class="title">{{ recipe.content|slice:":30" }}</h2>
+        <date class="date">{{ recipe.created_at }}</date>
+        <div class="metadata">
+          <div class="review-author">
+            <div class="profile" style="background-image: url('{{ recipe.author.profile_pic.url }}')"></div>
+            <span>{{ recipe.author.nickname }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </a>
+  {% empty %}
+  <p class="empty">{{ empty_message }} </p>
+  {% endfor %}
+</div>

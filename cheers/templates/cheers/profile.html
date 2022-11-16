@@ -72,36 +72,8 @@
       </a>
       {% endif %}
     </div>
+    {% include 'components/recipe_list.html' with recipes=user_recipes empty_message="아직 레시피가 없어요" %}
 
-    <div class="contents">
-      {% for recipe in user_recipes %}
-      <a href="{% url 'recipe-detail' recipe.id %}">
-        <div class="cp-card content">
-          <div
-            class="thumb"
-            style="background-image: url('{{ recipe.image1.url }}');"
-          ></div>
-          <div class="body">
-            <span class="cp-chip green">{{ recipe.restaurant_name }}</span>
-            <h2 class="title">{{ recipe.title }}</h2>
-            <date class="date">{{ recipe.dt_created|date:"Y년 n월 j일" }}</date>
-            <div class="metadata">
-              
-              <div class="recipe-author">
-                <div
-                  class="profile"
-                  style="background-image: url('{{ recipe.author.profile_pic.url }}')"
-                ></div>
-                <span>{{ recipe.author.nickname }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-      {% empty %}
-      <p class="empty">아직 리뷰가 없어요 :(</p>
-      {% endfor %}
-    </div>
   </div>
 </main>
 {% endblock content %}

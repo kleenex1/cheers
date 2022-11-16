@@ -24,26 +24,7 @@
       <a class="cp-ic-button circle newreview" href="{% url 'recipe-create' %}">레시피 작성</a>
     </div>
 
-      <div class="contents">
-        {% for recipe in recipes %}
-        <a href="{% url 'recipe-detail' recipe.id %}">
-          <section class="cp-card content">
-            <div class="thumb" style="background-image: url('{{ recipe.image1.url }}');"></div>
-            <div class="body">
-              <span class="cp-chip green">{{ recipe.title }}</span>
-              <h2 class="title">{{ recipe.content|slice:":30" }}</h2>
-              <date class="date">{{ recipe.created_at }}</date>
-              <div class="metadata">
-                <div class="review-author">
-                  <div class="profile" style="background-image: url('{{ recipe.author.profile_pic.url }}')"></div>
-                  <span>{{ recipe.author.nickname }}</span>
-                </div>
-              </div>
-            </div>
-          </section>
-        </a>
-        {% endfor %}
-      </div>
+    {% include 'components/recipe_list.html' with recipes=recipes empty_message="아직 레시피가 없어요" %}
 
       {% if is_paginated %}
         <footer>
