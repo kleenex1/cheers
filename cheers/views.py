@@ -151,7 +151,7 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     raise_exception = True
 
     def get_success_url(self):
-        return reverse("index")
+        return reverse("main")
 
     def test_func(self, user):
         recipe = self.get_object()
@@ -324,7 +324,7 @@ class ProfileSettingView(LoginRequiredMixin, UpdateView):
         return self.request.user
     
     def get_success_url(self):
-        return reverse("index")
+        return reverse("main")
    
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = User 
