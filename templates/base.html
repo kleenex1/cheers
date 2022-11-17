@@ -50,20 +50,24 @@
                 <li class="nav-item"> <a class="nav-link text-white" href="#">Home</a> </li>
                 <li class="nav-item"> <a class="nav-link text-white" href="#">About</a> </li>
                 <li class="nav-item"> <a class="nav-link text-white" href="./recipe.html">Recipe</a> </li>
+           
               </ul>
               <!-- 로고 -->
               <img style="width: 110px;" src="./img/cheers_logo.png" alt="">
               <!-- 오른쪽 메뉴 -->
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-1"> <a class="nav-link" href="#">
-                    <i class="text-white fa fa-github fa-fw fa-lg"></i>
-                  </a> </li>
-                <li class="nav-item mx-1"> <a class="nav-link" href="#">
-                    <i class="text-white fa fa-gitlab fa-fw fa-lg"></i>
-                  </a> </li>
-                <li class="nav-item mx-1"> <a class="nav-link" href="#">
-                    <i class="text-white fa fa-bitbucket fa-fw fa-lg"></i>
-                  </a> </li>
+                {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                  <li><a href="{% url 'admin:index' %}">관리자</a></li>
+                {% endif %}
+                <li><a href="{% url 'main' %}">홈으로</a></li>
+                <li><a href="{% url 'profile' user.id %}">내 프로필</a></li>
+                <li><a href="{% url 'account_logout' %}">로그아웃</a></li>
+                {% else %}
+                <li><a href="{% url 'main' %}">홈으로</a></li>
+                <li><a href="{% url 'account_login' %}">로그인</a></li>
+                <li><a href="{% url 'account_signup' %}">회원가입</a></li>
+                {% endif %}
               </ul>
             </div>
           </div>

@@ -43,14 +43,14 @@ class SearchView(ListView):
         return context
 
 
-class IndexView(View):
+class RecipeMainView(View):
     def get(self, request, *args, **kwargs):
         context = {}
         context['latest_recipes'] = Recipe.objects.all().order_by("-created_at")[:4]
         user = self.request.user
         if user.is_authenticated:
             context['latest_following_recipes'] = Recipe.objects.filter(author__followers=user).order_by("-created_at")[:4]
-        return render(request, 'cheers/index.html', context)
+        return render(request, 'cheers/recipe_main.html', context)
 
 class RecipeListView(ListView):
     model = Recipe
