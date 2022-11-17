@@ -1,8 +1,6 @@
 {% load django_bootstrap5 %}
 {% load static %}
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +11,8 @@
   
     <!-- CSS only -->
     {% block css %}
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/static/cheers/css/main.css">
+    
     <link rel="stylesheet" href="/cheers/static/cheers/css/main.css">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -34,6 +33,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
     {% endblock css %}
+
 </head>
 
 <body class="">
@@ -100,14 +100,14 @@
         </nav>
 
       <!-- BADGES -->
-      {% comment %} <div class="badges">
+       <div class="badges">
         <div class="badge">
-          <img style="width: 200px; height:300px;" src="/static/image/광고1.png" alt="badge">
+          <img style="width: 200px; height:300px;" src="/cheers/static/cheers/image/광고1.png" alt="badge">
         </div>
         <div class="badge">
-          <img style="width: 200px; height:130px;" src="/static/image/그림3-1.png" alt="badge">
+          <img style="width: 200px; height:130px;" src="/cheers/static/cheers/image/광고2.png" alt="badge">
         </div>
-      </div> {% endcomment %}
+      </div>
 
     </header>
 
@@ -145,8 +145,8 @@
 
 
   
-  {% block js %}
-  <script defer src="./js/main.js"></script>
+
+  <script defer src="staic/cheers/js/main.js"></script>
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6370773bcd26bc2f"></script>
 
@@ -158,7 +158,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  {% endblock js %}
+
 
 </body>
 </html>
