@@ -1,9 +1,12 @@
 from django.urls import path
+from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    # 메인
+    path('', TemplateView.as_view(template_name="cheers/main.html") ,name="main"),
     # 레시피
+    path('recipe-main', views.RecipeMainView.as_view(), name='recipe-main'),
     path('recipes/', views.RecipeListView.as_view(), name='recipe-list'),
     path('recipes/following/', views.FollowingRecipeListView.as_view(), name='following-recipe-list'),
     path('recipes/<int:recipe_id>/', views.RecipeDetailView.as_view(),name='recipe-detail'),

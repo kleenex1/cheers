@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +97,7 @@
 
     </header>
 
-  
+{% block body %}
  <!--VISUAL-->
   <section class="visual">
     <div class="inner">
@@ -318,7 +320,7 @@
         <img src="/static/image/cheers_1.png" alt="">
       </div>
     </div>
-
+    {% endblock body %}
 
 
     <!-- footer -->
