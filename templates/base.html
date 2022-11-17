@@ -47,9 +47,15 @@
             <div class="collapse navbar-collapse" id="navbar14">
               <!-- 왼쪽 메뉴 -->
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item"> <a class="nav-link text-white" href="#">Home</a> </li>
-                <li class="nav-item"> <a class="nav-link text-white" href="#">About</a> </li>
-                <li class="nav-item"> <a class="nav-link text-white" href="./recipe.html">Recipe</a> </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'main' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#"></a>">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'recipe-main' %}">Recipe</a>
+                </li>
            
               </ul>
               <!-- 로고 -->
@@ -58,7 +64,8 @@
               <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                 {% if user.is_staff %}
-                  <li><a href="{% url 'admin:index' %}">관리자</a></li>
+                  <li>
+                    <a href="{% url 'admin:index' %}">관리자</a></li>
                 {% endif %}
                 <li><a href="{% url 'main' %}">홈으로</a></li>
                 <li><a href="{% url 'profile' user.id %}">내 프로필</a></li>
@@ -79,11 +86,11 @@
             </button>
             <div class="collapse navbar-collapse text-center justify-content-center" id="navbar9">
               <ul class="navbar-nav">
-                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
+                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="./P_wine.html">
                   <b> WINE</b></a> </li>
-                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
+                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="./P_korea.html">
                   <b>WHISKEY</b></a> </li>
-                <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-white" href="#">
+                <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-white" href="./P_korea.html">
                     <b> SAKE/KOREA/CHINA</b></a> </li>
                 <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
                   <b> 🍹 Recipe </b></a> </li>
@@ -92,7 +99,17 @@
           </div>
         </nav>
 
-</header>
+      <!-- BADGES -->
+      <div class="badges">
+        <div class="badge">
+          <img style="width: 200px; height:300px;" src="/static/image/광고1.png" alt="badge">
+        </div>
+        <div class="badge">
+          <img style="width: 200px; height:130px;" src="/static/image/그림3-1.png" alt="badge">
+        </div>
+      </div>
+
+    </header>
 
 
 
