@@ -279,7 +279,8 @@ ul.navbar li {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
-  background-image: url("../assets/main-bg.jpg");
+  background-image: url("#");
+
 }
 
 .main-header .fg {

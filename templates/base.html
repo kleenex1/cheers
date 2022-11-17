@@ -51,7 +51,7 @@
                   <a class="nav-link text-white" href="{% url 'main' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#"></a>">About</a>
+                  <a class="nav-link text-white" href="#">About</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="{% url 'recipe-main' %}">Recipe</a>
@@ -67,13 +67,13 @@
                   <li>
                     <a href="{% url 'admin:index' %}">관리자</a></li>
                 {% endif %}
-                <li><a href="{% url 'main' %}">홈으로</a></li>
-                <li><a href="{% url 'profile' user.id %}">내 프로필</a></li>
-                <li><a href="{% url 'account_logout' %}">로그아웃</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'main' %}">홈으로</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'profile' user.id %}">내 프로필</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'account_logout' %}">로그아웃</a></li>
                 {% else %}
-                <li><a href="{% url 'main' %}">홈으로</a></li>
-                <li><a href="{% url 'account_login' %}">로그인</a></li>
-                <li><a href="{% url 'account_signup' %}">회원가입</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'main' %}">홈으로</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'account_login' %}">로그인</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'account_signup' %}">회원가입</a></li>
                 {% endif %}
               </ul>
             </div>
@@ -100,14 +100,14 @@
         </nav>
 
       <!-- BADGES -->
-      <div class="badges">
+      {% comment %} <div class="badges">
         <div class="badge">
           <img style="width: 200px; height:300px;" src="/static/image/광고1.png" alt="badge">
         </div>
         <div class="badge">
           <img style="width: 200px; height:130px;" src="/static/image/그림3-1.png" alt="badge">
         </div>
-      </div>
+      </div> {% endcomment %}
 
     </header>
 
