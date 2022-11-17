@@ -115,7 +115,7 @@
       </div>
     </div>
     <div class="footer">
-      <a class="back-link" href="{% url 'index' %}">&lt; 목록으로</a>
+      <a class="back-link" href="{% url 'main' %}">&lt; 목록으로</a>
       {% if recipe.author == user %}
       <div class="buttons">
         <a class="cheers-button warn" href="{% url 'recipe-delete' recipe.id %}">삭제</a>
