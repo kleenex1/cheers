@@ -1,26 +1,26 @@
-
+{% extends 'base.html' %}
 {% load widget_tweaks %}
 
 {% block title %}
-  {% if review %}
-  {{ review.title }}
+  {% if recipe %}
+  {{ recipe.title }}
   {% else %}
-    새 포스트 작성
+    새 레시피 작성
   {% endif %} | Cheers
 {% endblock title %}
 
-{% block content %}
+{% block body %}
 <main class="site-body">
-  <form class="review-form max-content-width" method="post" autocomplete="off" enctype="multipart/form-data">
+  <form class="recipe-form max-content-width" method="post" autocomplete="off" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="title">
-      {{ form.title|add_class:"class"|attr:"placeholder:제목"|add_error_class:"error"}}
+      {{ form.title|add_class:"cheers-input"|attr:"placeholder:제목"|add_error_class:"error"}}
       {% for error in form.title.errors %}
         <div class="error-message">{{error}}</div>
       {% endfor %}
     </div>
     <div class="content">
-      {{ form.content|add_class:"class"|attr:"placeholder:본인만의 레시피를 작성해 주세요"|add_error_class:"error"}}
+      {{ form.content|add_class:"cheers-input"|attr:"placeholder:본인만의 레시피를 작성해 주세요"|add_error_class:"error"}}
       {% for error in form.content.errors %}
         <div class="error-message">{{error}}</div>
       {% endfor %}
@@ -66,12 +66,12 @@
     </div>
 
     <div class="buttons">
-      <a class="cp-button secondary cancel" 
+      <a class="cheers-button secondary cancel" 
       href="{% if recipe %}{% url 'recipe-detail' recipe.id %}{% else %}{% url 'index' %}{% endif %}">
       취소
       </a>
-      <button class="cp-button submit" type="submit">완료</button>
+      <button class="cheers-button submit" type="submit">완료</button>
     </div>
   </form>
 </main>
-{% endblock content %}
+{% endblock body %}

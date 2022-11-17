@@ -1,11 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} 유저 레시피 ({{ paginator.count }}) | Cheers{% endblock title %}
 
-{% block title %} 창작 레시피 목록 ({{ paginator.count }}) | Cheers{% endblock title %}
-
-{% block content %}
+{% block body %}
 <main class="site-body">
   <div class="content-list max-content-width">
     <div class="header">
-      <h2>리뷰 목록</h2>
+      <h2>전체 유저 레시피 목록 ({{ paginator.count }})</h2>
     </div>
     {% include 'components/recipe_list.html' with recipes=recipes empty_message="아직 레시피가 없어요" %}
   
@@ -14,4 +14,4 @@
     {% endif %}
   </div>
 </main>
-{% endblock content %}
+{% endblock body %}

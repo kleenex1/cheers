@@ -1,17 +1,7 @@
-<style>
-  .profile {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-  }
-</style>
-
+{% extends 'base.html' %}
 {% block title %}{{ profile_user.nickname }} | Cheers {% endblock title %}
 
-{% block content %}
+{% block body %}
 <main class="site-body">
   <div class="content-list max-content-width">
     <div class="header">
@@ -22,11 +12,11 @@
 
 
     <div class="wrap-pagination">    
-      <a class="cp-ic-button circle backbutton" href="{% url 'profile' profile_user.id %}">프로필로 돌아가기</a>
+      <a class="cheers-ic-button circle backbutton" href="{% url 'profile' profile_user.id %}">프로필로 돌아가기</a>
       {% if is_paginated %}
         {% include 'components/pagination.html' with page_obj=page_obj %}
       {% endif %}
     </div>
   </div>
 </main>
-{% endblock content %}
+{% endblock body %}

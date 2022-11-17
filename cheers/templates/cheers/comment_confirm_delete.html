@@ -2,11 +2,11 @@
 
 {% block content %}
 <main class="site-body">
-  <form class="cp-dialog confirm-delete" method="post">
+  <form class="cheers-dialog confirm-delete" method="post">
     {% csrf_token %}
     <span class="content">정말 댓글을 삭제하시겠습니까?</span>
-    <button class="cp-button warn" type="submit">삭제</button>
-    <a class="cp-button secondary" href="{% url 'recipe-detail' comment.recipe.id %}">취소</a>
+    <button class="cheers-button warn" type="submit">삭제</button>
+    <a class="cheers-button secondary" href="{% url 'recipe-detail' comment.recipe.id %}">취소</a>
   </form>
 </main>
 {% endblock content %}

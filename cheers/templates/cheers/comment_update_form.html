@@ -4,10 +4,10 @@
 <main class="site-body">
   <form class="comment-update-form" method="post">
     {% csrf_token %}
-    {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cp-input" }}
+    {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cheers-input" }}
     <div class="buttons">
-      <button class="cp-button small" type="submit">완료</button>
-      <a class="cp-button small secondary" href="{% url 'recipe-detail' comment.recipe.id %}">취소</a>
+      <button class="cheers-button small" type="submit">완료</button>
+      <a class="cheers-button small secondary" href="{% url 'recipe-detail' comment.recipe.id %}">취소</a>
     </div>
   </form>
 </main>
