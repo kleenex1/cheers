@@ -63,6 +63,17 @@ class Comment(models.Model):
     def __str__(self):
         return self.content[:20]
 
+
+class Product(models.Model):
+    name = models.CharField(max_length=30)
+    price = models.IntegerField()
+    ml = models.CharField(max_length=10)
+    country = models.CharField(max_length=10)
+    image_path = models.CharField(max_length=255)
+    content = models.TextField()
+    likes = GenericRelation('Like', related_query_name='product')
+
+
 class Like(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes")

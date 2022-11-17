@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.contenttypes.admin import GenericStackedInline
-from .models import User, Recipe, Comment, Like
+from .models import User, Recipe, Comment, Like, Product
 # Register your models here.
 
 class UserInline(admin.StackedInline):
@@ -30,12 +30,16 @@ class CommentAdmin(admin.ModelAdmin):
     inlines = (
         LikeInline,
     )
+class ProductAdmin(admin.ModelAdmin):
+    inlines = (
+        LikeInline,
+    )
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Like)
-
+admin.site.register(Product,ProductAdmin)
 
 # User모델의 추가 필드는 admin 페이지에 따로 나오지 않기 때문에 설정을 해줘야한다.
 UserAdmin.fieldsets += (("Custom fields", {"fields": ("nickname", "profile_pic", "introduce", "following")}),)

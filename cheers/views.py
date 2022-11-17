@@ -14,7 +14,7 @@ from django.db.models import Q
 from braces.views import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.models import EmailAddress
 from allauth.account.views import PasswordChangeView
-from cheers.models import Recipe, User, Comment, Like
+from cheers.models import Recipe, User, Comment, Like, Product
 from cheers.forms import RecipeForm, ProfileForm, CommentForm
 from cheers.functions import confirmation_required_redirect
 
