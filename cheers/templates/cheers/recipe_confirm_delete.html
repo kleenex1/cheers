@@ -1,13 +1,13 @@
-
+{% extends 'base.html' %}
 {% block title %}{{ recipe.title }} | Cheers{% endblock title %}
 
-{% block content %}
+{% block body %}
 <main class="site-body">
-  <form class="cp-dialog review-confirm-delete" method="post">
+  <form class="cheers-dialog recipe-confirm-delete" method="post">
     {% csrf_token %}
     <span class="content">정말 본인의 레시피를 삭제하시겠습니까?</span>
-    <button class="cp-button warn" type="submit">삭제</button>
-    <a class="cp-button secondary" href="{% url 'recipe-detail' recipe.id %}">취소</a>
+    <button class="cheers-button warn" type="submit">삭제</button>
+    <a class="cheers-button secondary" href="{% url 'recipe-detail' recipe.id %}">취소</a>
   </form>
 </main>
-{% endblock content %}
+{% endblock body %}

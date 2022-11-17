@@ -1,10 +1,9 @@
-
-
+{% extends 'base.html' %}
 {% load static %}
 {% load widget_tweaks %}
 
 {% block title %}로그인 | Cheers{% endblock title %}
-{% block content %}
+{% block body %}
 <div class="account-background">
   <main class="account">
     <div class="title">
@@ -16,7 +15,7 @@
     <form method="post">
       {% csrf_token %}
       <div>
-        {{ form.email|add_class:"add_class"|attr:"placeholder:이메일"|add_error_class:"error_class"}}
+        {{ form.email|add_class:"cheers-input"|attr:"placeholder:이메일"|add_error_class:"error_class"}}
         {% for error in form.email.errors %}
         <div class="error-message">{{error}}</div>
         {% endfor %}
@@ -28,18 +27,18 @@
         {% endfor %}
       </div> {% endcomment %}
       <div>
-        {{ form.password1|add_class:"add_class"|attr:"placeholder: 비밀번호"|add_error_class:"error_class"}}
+        {{ form.password1|add_class:"cheers-input"|attr:"placeholder: 비밀번호"|add_error_class:"error_class"}}
         {% for error in form.password1.errors %}
         <div class="error-message">{{error}}</div>
         {% endfor %}
       </div>
       <div>
-        {{ form.password2|add_class:"add_class"|attr:"placeholder: 비밀번호 확인"|add_error_class:"error_class"}}
+        {{ form.password2|add_class:"cheers-input"|attr:"placeholder: 비밀번호 확인"|add_error_class:"error_class"}}
         {% for error in form.password2.errors %}
         <div class="error-message">{{error}}</div>
         {% endfor %}
       </div>
-      <button class="cp-button" type="submit">회원가입</button>
+      <button class="cheers-button" type="submit">회원가입</button>
     </form>
     
     <div class="info">
@@ -49,5 +48,5 @@
 </div>
 </body>
 </html>
-{% endblock content %}
+{% endblock body %}
 

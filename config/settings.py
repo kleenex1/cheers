@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_bootstrap5",
     # 어떤 기능을 여러사이트에서 사용할 수 있게 해줌(프로젝트 하나로 여러사이트 운영)
     "django.contrib.sites",
     "cheers",

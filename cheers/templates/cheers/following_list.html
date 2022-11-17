@@ -1,8 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}팔로잉 목록 | Cheers{% endblock title %}
 
-{% block content %}
+{% block body %}
 <main class="site-body">
   <div class="follow-list">
     <div class="follow-list-header">
@@ -13,15 +14,15 @@
       <div class="follow-list-block">
         {% for u in following %}
           <a class="follow-list-row" href="{% url 'profile' u.id %}">
-            <div class="cp-avatar medium" style="background-image: url('{{ u.profile_pic.url }}')"></div>
+            <div class="cheers-avatar medium" style="background-image: url('{{ u.profile_pic.url }}')"></div>
             <span class="nickname">{{ u.nickname }}</span>
           </a>
         {% endfor %}
       </div>
     {% endif %}
-    {% if is_paginated %}
+    {% if following %}
       {% include 'components/pagination.html' with page_obj=page_obj %}
     {% endif %}
   </div>
 </main>
-{% endblock content %}
+{% endblock body %}

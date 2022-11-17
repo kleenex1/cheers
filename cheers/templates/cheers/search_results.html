@@ -1,12 +1,12 @@
-
+{% extends 'base.html' %}
 {% block title %}"{{ query }}" | Cheers{% endblock title %}
 
-{% block content %}
+{% block body %}
 <main class="site-body">
   <div class="content-list max-content-width">
     <form class="search-form" action="{% url 'search' %}" method="get">
       <input class="search-input" name="query" value="{{query}}" type="text" placeholder="칵테일, 레시피 등을 검색해보세요" required>
-      <button class="cp-button search-button" type="submit">검색</button>
+      <button class="cheers-button search-button" type="submit">검색</button>
     </form>
     <div class="header">
       <h2>"{{ query }}"에 대한 검색 결과 ({{ paginator.count }})</h2>
@@ -17,4 +17,4 @@
     {% endif %}
   </div>
 </main>
-{% endblock content %}
+{% endblock body %}

@@ -1,26 +1,17 @@
-<style>
-  .profile {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-  }
-</style>
+{% extends 'base.html' %}
 
 {% load static %}
 {% load widget_tweaks %}
-{% block title %}{{ review.title }} | Cheers{% endblock title %}
+{% block title %}{{ recipe.title }} | Cheers{% endblock title %}
 
-{% block content %}
+{% block body %}
 <main class="site-body">
-  <article class="review-detail max-content-width">
-    <div class="review-info">
+  <article class="recipe-detail max-content-width">
+    <div class="recipe-info">
       <h1 class="title">{{ recipe.title }}</h1>
       <div class="author">
-        <a class="review-author" href="{% url 'profile' recipe.author.id %}">
-          <div class="profile" style="background-image: url('{{ recipe.author.profile_pic.url }}')"></div>
+        <a class="recipe-author" href="{% url 'profile' recipe.author.id %}">
+          <div class="cheers-avatar" style="background-image: url('{{ recipe.author.profile_pic.url }}')"></div>
           <span>{{ recipe.author.nickname }}</span>
         </a>
       </div>
@@ -66,13 +57,13 @@
       <form class="comment-create-form" action="{% url 'comment-create' recipe.id %}" method="post">
         {% csrf_token %}
         {% if user.is_authenticated %}
-        {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cp-input"}}
-        <button class="cp-button small" type="submit">등록</button>
+        {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cheers-input"}}
+        <button class="cheers-button small" type="submit">등록</button>
         {% else %}
         <a href="{% url 'account_login' %}?next={% url 'recipe-detail' recipe.id %}">
-          {{ form.content|attr:"placeholder:댓글 작성을 위해 로그인을 해주세요."|add_class:"cp-input"|attr:"disabled" }}
+          {{ form.content|attr:"placeholder:댓글 작성을 위해 로그인을 해주세요."|add_class:"cheers-input"|attr:"disabled" }}
         </a>
-        <button class="cp-button small" type="submit" disabled>등록</button>
+        <button class="cheers-button small" type="submit" disabled>등록</button>
         {% endif %}
       </form>
       <div class="comment-list">
@@ -81,7 +72,7 @@
             <div class="comment-header">
               <a href="{% url 'profile' comment.author.id %}">
                 <div class="author">
-                  <div class="cp-avatar" style="background-image: url('{{ comment.author.profile_pic.url }}')"></div>
+                  <div class="cheers-avatar" style="background-image: url('{{ comment.author.profile_pic.url }}')"></div>
                   <span>{{ comment.author.nickname }}</span>
                 </div>
               </a>
@@ -127,11 +118,11 @@
       <a class="back-link" href="{% url 'index' %}">&lt; 목록으로</a>
       {% if recipe.author == user %}
       <div class="buttons">
-        <a class="cp-button warn" href="{% url 'recipe-delete' recipe.id %}">삭제</a>
-        <a class="cp-button secondary" href="{% url 'recipe-update' recipe.id %}">수정</a>
+        <a class="cheers-button warn" href="{% url 'recipe-delete' recipe.id %}">삭제</a>
+        <a class="cheers-button secondary" href="{% url 'recipe-update' recipe.id %}">수정</a>
       </div>
       {% endif %}
     </div>
   </article>
 </main>
-{% endblock content %}
+{% endblock body %}
