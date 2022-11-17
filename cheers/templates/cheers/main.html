@@ -1,29 +1,51 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}
+<style>
+  .visual .title_img {
+  position: absolute;
+  left: 135px;
+  bottom: 0;
+}
+</style>
 
-{% static 'css/main.css' %}
-
+{% endblock css %}
 
 {% block body %}
+
+<!-- 광고 뱃지 -->
+<!-- <header>
+  <div class="badges">
+    <div class="badge">
+      <img style="width: 200px; height:300px;" src="{% static 'cheers/image/광고1.png' %}" alt="badge">
+    </div>
+    <div class="badge">
+      <img style="width: 200px; height:130px;" src="{% static 'cheers/image/광고2.png' %}" alt="badge">
+    </div>
+  </div>
+</header> -->
+
  <!--VISUAL-->
   <section class="visual">
     <div class="inner">
       <div class="title fade-in">
-        <img src="/static/image/main.png" alt="" class="title_img">
-        <img style="width: 700px; height: 650px;" src="/static/image/main text.png" alt="NEGRONI">
-        <a style="color: #fff;" href="javascript:void(0)" class="btn btn--red">View more</a>
+        <img src="{% static 'cheers/image/main.png' %}" alt="" class="title_img">
+        <img style="margin: 50px; position: absolute; left: 170px; bottom: 100px;" src="{% static 'cheers/image/main text.png' %}" alt="NEGRONI">
+        <!-- <a style="color: #fff;" href="javascript:void(0)" class="btn btn--red">View more</a> -->
       </div>
       <div class="fade-in">
-        <img src="/static/image/칵테일4.png" alt="new OTMEAL LATTE" class="cup1 image">
-        <img style="width: 400px; height:150px;" src="./img/cup1 text.png" alt="NEGRONI 칵테일1" class="cup1 text">
+        <img src="{% static 'cheers/image/칵테일4.png' %}" alt="new OTMEAL LATTE" class="cup1 image">
+        <img style="width: 400px; height:150px;" src="{% static 'cheers/image/cup1 text.png' %}" alt="NEGRONI 칵테일1" class="cup1 text">
       </div>
       <div class="fade-in">
-        <img style="width: 350px; height:450px;" src="/static/image/칵테일5.png" alt="NEGRONI 칵테일2" class="cup2 image">
-        <img style="width: 420px; " src="./img/cup2 text.png" alt="NEGRONI 칵테일2" class="cup2 text">
+        <img style="width: 350px; height:450px;" src="{% static 'cheers/image/칵테일5.png' %}" alt="NEGRONI 칵테일2" class="cup2 image">
+        <img style="width: 420px; " src="{% static 'cheers/image/cup2 text.png' %}" alt="NEGRONI 칵테일2" class="cup2 text">
       </div>
     </div>
   </section>
+
+
 
 
   <section class="notice">
@@ -76,7 +98,9 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a3dc2a149613261.62ea8ba1458f7.jpg" alt="1">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
           </div>
           <div class="swiper-slide">
             <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c1369a149613261.62ea8b9f966c1.jpg" alt="2">
@@ -114,122 +138,242 @@
 
   </section>
 
-    <!--요리와 술 설명 메인 사진 -->
-    <!-- cocktails and special stories -->
-    <div class="bg-black d-flex justify-content-center">
-      <img src="/static/image/section title.png" alt="">
-    </div>
-    <!-- 요리와 술 _ 일본 편  -->
-    <!-- 첫번째 -->
-    <div class="py-5 bg-black">
-      <div class="container">
-        <div class="row ">
-          <div class="d-flex flex-column justify-content-center p-3 col-lg-7">
-            <p class="lead mb-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quod, iusto expedita qui optio cumque, natus quis repellat rerum, odit eveniet laborum? Exercitationem eos animi porro dolore aperiam fugit ex.
-            </p>
-          </div>
-          <div class="p-0 col-lg-5"> 
-            <img  class="d-block rounded-3" src="/static/image/사진1.PNG"> </div>
-        </div>
-      </div>
-    </div>
-    <!-- 두변빼 -->
-    <div class="py-5 bg-black">
-      <div class="container">
-        <div class="row">
-          <div class="d-flex flex-column justify-content-center p-3 col-lg-7"> 
-            <img  class="d-block rounded-3" src="/static/image/사진2.PNG"> </div>
-          </div>
-          <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2">
-            <p class="lead mb-0">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati temporibus iste veritatis, omnis voluptas. Velit suscipit nulla animi labore! Mollitia illum pariatur libero sapiente cum deserunt magnam a autem!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 세번째 -->
-    <div class="py-5 bg-black">
-      <div class="container">
-        <div class="row ">
-          <div class="d-flex flex-column justify-content-center p-3 col-lg-7">
-            <p class="lead mb-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quod, iusto expedita qui optio cumque, natus quis repellat rerum, odit eveniet laborum? Exercitationem eos animi porro dolore aperiam fugit ex.
-            </p>
-          </div>
-          <div class="p-0 col-lg-5"> 
-            <img  class="d-block rounded-3" src="/static/image/사진3.PNG"> </div>
-        </div>
-      </div>
-    </div>
+  
 
 
 
     <!-- 술 판매 정보 -->
-    <div class="py-5 text-center" style="height: 700px;; background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/4ce18f128812339.61d47893bfe9c.png');background-size:cover;">
+    <div class="py-5 text-center" style=" background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/be5a36143629717.62bf67a1123d8.png');background-size:cover;">
       <div class="container">
         <div class="row">
-          <div class="col-10 bg-white p-5 mx-auto mx-md-0 col-lg-6 col-md-8 rounded-4">
-            <h1>A wonderful serenity</h1>
-            <p class="mb-3">Has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.</p> <a class="btn btn-primary" href="#">Red more</a>
+          <div style="background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0a2ba2111109037.5ffc84dc1d61d.gif');" class="col-10 bg-white p-5 mx-auto mx-md-0 col-lg-6 col-md-8 rounded-4">
+            <h1 class="text-white" >A wonderful peaceful</h1>
+            <h3 class="text-white">width cocktail</h3>
+            <p class="mb-3">Has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.</p>
+            <a style="background-color: #937DC2;" class="btn text-white" href="#">Red more</a>
           </div>
         </div>
       </div>
     </div>
 
-
-    <!-- 칵테일 레시피 홍보 -->
-    <div class="py-3 text-center">
-      <div class="m-5 p-3">
-        <div class="row">
-          <div class="mx-auto col-md-12">
-            <h1 class="mb-3">칵테일을 만드는 방법</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 col-lg-3 p-4 "> 
-            <img style="width: 350px;" class="rounded-4" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6797da35199529.56ed7ab70a188.gif" alt="">
-            <h4> <b>J. W. Goethe</b> </h4>
-            <p class="mb-3">CEO and founder</p>
-          </div>
-          <div class="col-6 col-lg-3 p-4">
-            <img style="width: 350px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/45c86d35199529.56ed7ab7cb9b4.gif" alt="">
-            <h4> <b>G. W. John</b> </h4>
-            <p class="mb-3">Co-founder</p>
-          </div>
-          <div class="col-6 col-lg-3 p-4">
-            <img style="width: 350px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1ff18c35199529.56ed7f7c29a37.gif" alt="">            
-            <h4> <b>J. G. Wolf</b> </h4>
-            <p class="mb-3">Evangelist</p>
-          </div>
-          <div class="col-6 col-lg-3 p-4">
-            <img style="width: 350px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2d0bb235199529.56ed7ab665072.gif" alt="">            
-            <h4> <b>A. Gang</b> </h4>
-            <p class="mb-3">CFO</p>
-          </div>
-          <div class="d-flex justify-content-center align-content-center">
-            <div class="col-6 col-lg-3 p-4">
-              <img style="width: 350px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e92eb235199529.56ed7ab614cec.gif" alt="">              
-              <h4> <b>A. Gang</b> </h4>
-              <p class="mb-3">CFO</p>
-            </div>
-            <div class="col-6 col-lg-3 p-4">
-              <img style="width: 350px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/919a8435199529.56ed7ab90abdf.gif" alt="">              
-              <h4> <b>A. Gang</b> </h4>
-              <p class="mb-3">CFO</p>
+<!-- 서비스 칵테일 소개 -->
+    <div style="background-color: #000;" class="section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-6 mx-auto text-center">
+            <div class="heading-content" data-aos="fade-up">
+              <h2 class="heading text-white">Introduction popular recipes</h2>
+              <p  class="text-white">Check out the cocktail recipes in our service</p>
             </div>
           </div>
         </div>
+  
+        <div  class="row">
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6797da35199529.56ed7ab70a188.gif" alt="Image" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center">STEP 01</h3>
+              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </a>
+          </div>
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/45c86d35199529.56ed7ab7cb9b4.gif" alt="Image" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center">STEP 02</h3>
+              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </a>
+          </div>
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1ff18c35199529.56ed7f7c29a37.gif" alt="Image" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center">STEP 03</h3>
+              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </a>
+          </div>
+          
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2d0bb235199529.56ed7ab665072.gif" alt="Image" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center">STEP 04</h3>
+              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </a>
+          </div>
+
+          <!-- 공간을 위한 배치 -->
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="" alt="" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center"></h3>
+              <p class="text-muted text-center"></p>
+            </a>
+          </div>
+
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e92eb235199529.56ed7ab614cec.gif" alt="Image" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center">STEP 05</h3>
+              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </a>
+          </div>
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/919a8435199529.56ed7ab90abdf.gif" alt="Image" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center">STEP 06</h3>
+              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </a>
+          </div>
+
+           <!-- 공간을 위한 배치 -->
+          <div class="col-lg-3">
+            <a href="#" class="person">
+              <img src="" alt="" class="img-fluid mb-4">
+              <h3 class="mb-3 text-white text-center"></h3>
+              <p class="text-muted text-center"></p>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- enjoy your time here -->
-    <div class="bg-black">
-      <div class="d-flex justify-content-center align-items-center">
-        <img src="/static/image/cheers_1.png" alt="">
-      </div>
-    </div>
+  <!-- 후기 소개 -->
+    <div class="section">
+      <div class="container">
+        
+        <div class="row align-items-stretch">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_1.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+  
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_2.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+  
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_3.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_4.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_1.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+  
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_2.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+  
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_3.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="media-entry">
+              <a href="index.html">
+                <img src="images/gal_4.jpg" alt="Image" class="img-fluid">
+              </a>
+              <div class="bg-white m-body">
+                <span class="date">May 14, 2020</span>
+                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+                <a href="single.html" class="more d-flex align-items-center float-start">
+                  <span class="label">Read More</span>
+                  <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                </a>
+              </div>
+            </div>
+
+    
 
     {% endblock body %}
 

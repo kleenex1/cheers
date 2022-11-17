@@ -7,12 +7,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Untree.co">
+    <meta name="description" content="" />
+	  <meta name="keywords" content="bootstrap, bootstrap5" />
+
     <title>{% block title %}CHEERS{% endblock title %}</title>
+
+
+    link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'cheers/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cheers/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'cheers/css/tiny-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'cheers/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'cheers/css/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'cheers/css/glightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'cheers/css/style.css' %}">
   
     <!-- CSS only -->
-    {% block css %}
-    <link rel="stylesheet" href="/static/cheers/css/main.css">
-    
+    <link rel="stylesheet" href="{% static 'cheers/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="/cheers/static/cheers/css/main.css">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -31,14 +47,25 @@
 
     <!-- SWIPER -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+  
     <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
-    {% endblock css %}
+
+    <script src="{% static 'cheers/js/aos.js' %}"></script>
+    <script src="{% static 'cheers/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'cheers/js/counter.js' %}"></script>
+    <script src="{% static 'cheers/js/custom.js' %}"></script>
+    <script src="{% static 'cheers/js/flatpickr.js' %}"></script>
+    <script src="{% static 'cheers/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'cheers/js/glightbox.main.js' %}"></script>
+    <script src="{% static 'cheers/js/glightbox.rellax.js' %}"></script>
+    <script src="{% static 'cheers/js/glightbox.tiny-slider.js' %}"></script>
+
 
 </head>
 
 <body class="">
   <header class="fixed-top" >
-      <nav style="height: 150px;" class="navbar navbar-expand-lg bg-black navbar-dark ">
+      <nav style="height: 145px;" class="navbar navbar-expand-lg bg-black navbar-dark ">
           <div class="container "> 
               <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14">
               <p class="navbar-brand mb-0 text-white">
@@ -60,6 +87,7 @@
               </ul>
               <!-- 로고 -->
               <img style="width: 110px;" src="/cheers/static/cheers/image/cheers_logo.png" alt="">
+              <img style="width: 110px;" src="{% static 'cheers/image/cheers_logo.png' %}" alt="">
               <!-- 오른쪽 메뉴 -->
               <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
@@ -80,8 +108,9 @@
           </div>
         </nav>
         <!-- second nav -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
-          <div class="container justify-content-center"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar9">
+        <nav style="height: 80px;" class="navbar navbar-expand-md navbar-dark bg-dark" >
+          <div class="container justify-content-center">
+            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar9">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse text-center justify-content-center" id="navbar9">
@@ -98,16 +127,6 @@
             </div>
           </div>
         </nav>
-
-      <!-- BADGES -->
-       <div class="badges">
-        <div class="badge">
-          <img style="width: 200px; height:300px;" src="/cheers/static/cheers/image/광고1.png" alt="badge">
-        </div>
-        <div class="badge">
-          <img style="width: 200px; height:130px;" src="/cheers/static/cheers/image/광고2.png" alt="badge">
-        </div>
-      </div>
 
     </header>
 
@@ -146,7 +165,7 @@
 
   
 
-  <script defer src="staic/cheers/js/main.js"></script>
+  
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6370773bcd26bc2f"></script>
 
@@ -158,6 +177,60 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  <script>
+    const badgeEl = document.querySelector('header .badges');
+    window.addEventListener('scroll', _.throttle(function () {
+      console.log('window.scrollY');
+      if (window.scrollY > 500) {
+        //배지 숨기기 
+        gsap.to(badgeEl, .6, {
+          opacity: 0,
+          display: 'none'
+        });
+      }else {
+        //배지 보이기
+        gsap.to(badgeEl, .6, {
+          opacity: 1,
+          display: 'block'
+      });
+    }
+  }, 300));
+  const fadeELs = document.querySelectorAll('.visual .fade-in');
+  fadeELs.forEach( function (fadeEl, index) {
+    gsap.to(fadeEl, 1, {
+      delay: (index + 1) * .7, 
+      opacity: 1
+    });
+  });
+  
+  //new Swiper (선택자, 옵션)
+  new Swiper('.notice-line .swiper-container', {
+    direction: 'vertical',
+    autoplay: true,
+    loop: true
+  });
+  
+  new Swiper('.promotion .swiper-container', {
+    // direction: 'horizontal', // 수평 슬라이드
+    autoplay: { // 자동 재생 여부
+      delay: 5000 // 5초마다 슬라이드 바뀜
+    },
+    loop: true, // 반복 재생 여부
+    slidesPerView: 3, // 한 번에 보여줄 슬라이드 개수
+    spaceBetween: 10, // 슬라이드 사이 여백
+    centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+    pagination: { // 페이지 번호 사용 여부
+      el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+      clickable: true // 사용자의 페이지 번호 요소 제어 가능 여부
+    },
+    navigation: { // 슬라이드 이전/다음 버튼 사용 여부
+      prevEl: '.promotion .swiper-prev', // 이전 버튼 선택자
+      nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
+    }
+  })
+  </script>
 
 
 </body>
