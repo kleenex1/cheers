@@ -107,9 +107,15 @@ a {
 .visual .title .btn {
   position: absolute;
   top: 259px;
-  left: 173px;
-  margin-top: 350px;
-  margin-left: 50px;
+  left: 190px;
+  padding: 30px;
+  padding-right: 210px;
+  padding-left: 145px;
+  margin-left: 0px;
+  background-color: #630606;
+  border-style: none;
+  /* margin-top: 350px;
+  margin-left: 50px; */
 }
 
 .visual .cup1.image {

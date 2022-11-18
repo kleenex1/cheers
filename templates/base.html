@@ -86,7 +86,9 @@
            
               </ul>
               <!-- 로고 -->
+
               <img style="width: 110px;" src="{% static 'cheers/image/cheers_logo.png' %}" alt="">
+
               <!-- 오른쪽 메뉴 -->
               <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
@@ -127,7 +129,20 @@
           </div>
         </nav>
 
+        <!-- 광고 뱃지 -->
+
+        <div class="badges">
+          <div class="badge">
+            <img style="width: 200px; height:300px;" src="{% static 'cheers/image/광고1.png' %}" alt="badge">
+          </div>
+          <div class="badge">
+            <img style="width: 200px; height:130px;" src="{% static 'cheers/image/광고2.png' %}" alt="badge">
+          </div>
+        </div>
+
+
     </header>
+
 
 
 
