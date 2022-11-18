@@ -30,4 +30,9 @@ urlpatterns = [
     path('users/<int:user_id>/followers/', views.FollowerListView.as_view(), name='follower-list'),
     # 검색
     path('search/', views.SearchView.as_view(), name='search'),
+
+    # 백엔드없는 페이지
+    path('korea/', TemplateView.as_view(template_name="main/P_korea.html") ,name="korea"),
+    path('whiskey/', TemplateView.as_view(template_name="main/P_whiskey.html") ,name="whiskey"),
+    path('wine/', TemplateView.as_view(template_name="main/P_wine.html") ,name="wine"),
 ]
