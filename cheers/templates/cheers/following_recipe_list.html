@@ -1,8 +1,9 @@
+{% extends 'base.html' %}
 
 {% block title %}팔로잉 유저들의 리뷰 ({{ paginator.count }}) | Cheers{% endblock title %}
 
 {% block body %}
-<main class="site-body">
+<main class="site-body" style="margin-top:200px;">
   <div class="content-list max-content-width">
     <div class="header">
       <h2>팔로잉 유저들의 리뷰 ({{ paginator.count }})</h2>

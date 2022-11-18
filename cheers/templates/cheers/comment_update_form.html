@@ -1,14 +1,17 @@
+{% extends 'base.html' %}
 {% block title %}댓글 수정 | Cheers{% endblock title %}
 {% load widget_tweaks %}
-{% block content %}
-<main class="site-body">
+
+{% block body %}
+<main class="site-body" style="margin-top:200px;">
   <form class="comment-update-form" method="post">
+    <h1>댓글 수정 | Cheers</h1>
     {% csrf_token %}
     {{ form.content|attr:"placeholder:댓글 내용을 입력해주세요."|add_class:"cheers-input" }}
     <div class="buttons">
       <button class="cheers-button small" type="submit">완료</button>
-      <a class="cheers-button small secondary" href="{% url 'recipe-detail' comment.recipe.id %}">취소</a>
+      <button class="cheers-button small secondary" href="{% url 'recipe-detail' comment.recipe.id %}">취소</button>
     </div>
   </form>
 </main>
-{% endblock content %}
+{% endblock body %}

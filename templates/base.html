@@ -14,7 +14,7 @@
     <title>{% block title %}CHEERS{% endblock title %}</title>
 
 
-    link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'cheers/css/style.css' %}">
@@ -86,8 +86,9 @@
            
               </ul>
               <!-- 로고 -->
-              
-              <img style="width: 150px; " src="{% static 'cheers/image/cheers_logo.png' %}" alt="">
+
+              <img style="width: 110px;" src="{% static 'cheers/image/cheers_logo.png' %}" alt="">
+
               <!-- 오른쪽 메뉴 -->
               <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
@@ -115,13 +116,13 @@
             </button>
             <div class="collapse navbar-collapse text-center justify-content-center" id="navbar9">
               <ul class="navbar-nav">
-                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="./P_wine.html">
+                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="{% url 'wine' %}">
                   <b> WINE</b></a> </li>
-                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="./P_korea.html">
+                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="{% url 'whiskey' %}">
                   <b>WHISKEY</b></a> </li>
-                <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-white" href="./P_korea.html">
+                <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-white" href="{% url 'korea' %}">
                     <b> SAKE/KOREA/CHINA</b></a> </li>
-                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="#">
+                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="{% url 'recipe-main' %}">
                   <b> 🍹 Recipe </b></a> </li>
               </ul>
             </div>

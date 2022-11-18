@@ -4,7 +4,7 @@
     <section class="cheers-card content">
       <div class="thumb" style="background-image: url('{{ recipe.image1.url }}');"></div>
       <div class="body">
-        <span class="cheers-chip green"> 칵테일 </span>
+        <span class="cheers-chip green"> #칵테일 </span>
         <h2 class="title">{{ recipe.title }} </h2>
         <date class="date">{{ recipe.created_at }}</date>
         <div class="metadata">
@@ -17,6 +17,6 @@
     </section>
   </a>
   {% empty %}
-  <p class="empty">{{ empty_message }} </p>
+  <p class="empty">{{ empty_message }}</p>
   {% endfor %}
 </div>
