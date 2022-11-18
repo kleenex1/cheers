@@ -138,13 +138,13 @@ ul.navbar li {
 
 .content-list .contents {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 46px 40px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 36px 30px;
 }
 
 @media (max-width: 640px) {
   .content-list .contents {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -152,7 +152,7 @@ ul.navbar li {
   margin: 120px auto;
   font-weight: bold;
   font-size: 20px;
-  grid-column: span 2;
+  grid-column: span 4 / auto;
 }
 
 .content-list .contents > a:hover,
@@ -192,13 +192,13 @@ ul.navbar li {
 }
 
 .content-list .content .date {
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: -0.21px;
   color: var(--content-list-contet-date);
 }
 
 .content-list .content .metadata {
-  margin-top: 48px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -450,7 +450,7 @@ input.search-input::placeholder {
 
 .recipe-detail .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 28px 0;
   border-top: 1px solid var(--border);
@@ -564,7 +564,7 @@ a.like-button:hover {
 }
 
 .comment-create-form textarea.cheers-input {
-  height: 120px;
+  height: 70px;
 }
 
 .comment-create-form button.cheers-button {
@@ -661,7 +661,6 @@ a.like-button:hover {
 
 .recipe-form .buttons {
   display: flex;
-  max-width: 600px;
   width: 100%;
   margin: 0 auto;
 }

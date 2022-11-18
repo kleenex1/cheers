@@ -9270,8 +9270,8 @@ a {
     /* Firefox 18- */
     color: rgba(0, 0, 0, 0.5); }
 
-textarea {
-  height: auto !important; }
+/* textarea {
+  height: auto !important; } */
 
 #overlayer {
   width: 100%;
