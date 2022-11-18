@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block body %}
-<main class="site-body">
+<main class="site-body" style="margin-top:200px;">
   <form class="recipe-form max-content-width" method="post" autocomplete="off" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="title">
@@ -67,7 +67,7 @@
 
     <div class="buttons">
       <a class="cheers-button secondary cancel" 
-      href="{% if recipe %}{% url 'recipe-detail' recipe.id %}{% else %}{% url 'index' %}{% endif %}">
+      href="{% if recipe %}{% url 'recipe-detail' recipe.id %}{% else %}{% url 'recipe-main' %}{% endif %}">
       취소
       </a>
       <button class="cheers-button submit" type="submit">완료</button>

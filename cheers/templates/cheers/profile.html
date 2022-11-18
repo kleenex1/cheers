@@ -40,7 +40,7 @@
       <form class="follow-button" action="{% url 'process-follow' profile_user.id %}" method="post">
         {% csrf_token %}
         {% if is_following %}
-        <button class="cheers-button small" type="submit">
+        <button class="cheers-button small secondary" type="submit">
           언팔로우
         </button>
         {% else %}

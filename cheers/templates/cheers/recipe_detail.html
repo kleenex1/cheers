@@ -6,7 +6,7 @@
 
 {% block body %}
 <main class="site-body">
-  <article class="recipe-detail max-content-width">
+  <article class="recipe-detail max-content-width" style="margin-top: 300px;">
     <div class="recipe-info">
       <h1 class="title">{{ recipe.title }}</h1>
       <div class="author">
@@ -115,11 +115,11 @@
       </div>
     </div>
     <div class="footer">
-      <a class="back-link" href="{% url 'main' %}">&lt; 목록으로</a>
+      <a class="back-link" href="{% url 'recipe-main' %}">&lt; 목록으로</a>
       {% if recipe.author == user %}
       <div class="buttons">
-        <a class="cheers-button warn" href="{% url 'recipe-delete' recipe.id %}">삭제</a>
-        <a class="cheers-button secondary" href="{% url 'recipe-update' recipe.id %}">수정</a>
+        <a class="cheers-button small warn" href="{% url 'recipe-delete' recipe.id %}">삭제</a>
+        <a class="cheers-button small secondary" href="{% url 'recipe-update' recipe.id %}">수정</a>
       </div>
       {% endif %}
     </div>

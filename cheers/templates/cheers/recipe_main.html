@@ -27,7 +27,7 @@
       <div class="header">
         <h2>팔로잉 유저들의 리뷰</h2>
       </div>
-      {% include 'components/recipe_list.html' with recipes=latest_following_recipes empty_message="아직 리뷰가 없어요 :(" %}
+      {% include 'components/recipe_list.html' with recipes=latest_following_recipes empty_message="아직 레시피가 없어요 :(" %}
       {% if latest_following_recipes %}
         <a class="cheers-button" href="{% url 'following-recipe-list' %}">팔로잉 유저 레시피 모아보기</a>
       {% endif %}

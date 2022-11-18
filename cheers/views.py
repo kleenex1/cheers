@@ -46,17 +46,17 @@ class SearchView(ListView):
 class RecipeMainView(View):
     def get(self, request, *args, **kwargs):
         context = {}
-        context['latest_recipes'] = Recipe.objects.all().order_by("-created_at")[:4]
+        context['latest_recipes'] = Recipe.objects.all().order_by("-created_at")[:8]
         user = self.request.user
         if user.is_authenticated:
-            context['latest_following_recipes'] = Recipe.objects.filter(author__followers=user).order_by("-created_at")[:4]
+            context['latest_following_recipes'] = Recipe.objects.filter(author__followers=user).order_by("-created_at")[:8]
         return render(request, 'cheers/recipe_main.html', context)
 
 class RecipeListView(ListView):
     model = Recipe
     context_object_name = 'recipes'
     template_name = 'cheers/recipe_list.html'
-    paginate_by = 8
+    paginate_by = 16
     ordering = ['-created_at']
 
 class FollowingRecipeListView(LoginRequiredMixin, ListView):
@@ -189,7 +189,7 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     
     def test_func(self, user):
         recipe = self.get_object()
-        return recipe.author == user
+        return recipe.author == user 
 
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Comment
@@ -300,7 +300,7 @@ class UserRecipesListView(ListView):
     model = Recipe
     template_name = "cheers/user_recipe_list.html"
     context_object_name = "user_recipes"
-    paginate_by = 4
+    paginate_by = 8
 
     # 기본적으로 전체 Recipes들을 List로 전달한다. 따로 context에 전달하지 않아도 됨
     def get_queryset(self):
