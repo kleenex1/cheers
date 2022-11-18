@@ -12,19 +12,10 @@
 
 {% endblock css %}
 
+
+
 {% block body %}
 
-<!-- 광고 뱃지 -->
-<!-- <header>
-  <div class="badges">
-    <div class="badge">
-      <img style="width: 200px; height:300px;" src="{% static 'cheers/image/광고1.png' %}" alt="badge">
-    </div>
-    <div class="badge">
-      <img style="width: 200px; height:130px;" src="{% static 'cheers/image/광고2.png' %}" alt="badge">
-    </div>
-  </div>
-</header> -->
 
  <!--VISUAL-->
   <section class="visual">
@@ -33,6 +24,8 @@
         <img src="{% static 'cheers/image/main.png' %}" alt="" class="title_img">
         <img style="margin: 50px; position: absolute; left: 170px; bottom: 100px;" src="{% static 'cheers/image/main text.png' %}" alt="NEGRONI">
         <!-- <a style="color: #fff;" href="javascript:void(0)" class="btn btn--red">View more</a> -->
+        <button style="display:flex" type="button" class="btn btn-primary btn-lg">NEGRONI</button>
+
       </div>
       <div class="fade-in">
         <img src="{% static 'cheers/image/칵테일4.png' %}" alt="new OTMEAL LATTE" class="cup1 image">
@@ -94,29 +87,29 @@
      <!--PROMOTION-->
      <div class="promotion">
 
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
+      <div  class="swiper-container">
+        <div style="margin-top: 50px;" class="swiper-wrapper">
           <div class="swiper-slide">
             <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a3dc2a149613261.62ea8ba1458f7.jpg" alt="1">
             <div class="d-grid gap-2 col-6 mx-auto">
-              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+              <button class="btn btn-primary mb-3" type="submit">자세히 보기</button>
             </div>
           </div>
           <div class="swiper-slide">
             <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c1369a149613261.62ea8b9f966c1.jpg" alt="2">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <button class="btn btn-primary mb-3" type="submit">자세히 보기</button>
           </div>
           <div class="swiper-slide">
             <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/6dcb2b149613261.62f120888af14.jpg" alt="3">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <button class="btn btn-primary mb-3" type="submit">자세히 보기</button>
           </div>
           <div class="swiper-slide">
             <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/5d28ab149613261.62ea8ba05e03a.jpg" alt="4">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <button class="btn btn-primary mb-3" type="submit">자세히 보기</button>
           </div>
           <div class="swiper-slide">
             <img style="width: 819px; height:553px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/da8786149613261.62ea8ba05e93d.jpg" alt="5">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <button class="btn btn-primary mb-3" type="submit">자세히 보기</button>
           </div>
         </div>
       </div>
@@ -164,6 +157,9 @@
             <div class="heading-content" data-aos="fade-up">
               <h2 class="heading text-white">Introduction popular recipes</h2>
               <p  class="text-white">Check out the cocktail recipes in our service</p>
+              <div style="display: flex; justify-content: center;"  class="d-grid gap-2 col-6 mx-auto">
+                <button style="background-color: #FFD93D; border-style: none;" class="btn btn-primary" type="button">Button</button>
+              </div>
             </div>
           </div>
         </div>
@@ -173,21 +169,21 @@
             <a href="#" class="person">
               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6797da35199529.56ed7ab70a188.gif" alt="Image" class="img-fluid mb-4">
               <h3 class="mb-3 text-white text-center">STEP 01</h3>
-              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p class="text-muted text-center">First, list the ingredients and set them.</p>
             </a>
           </div>
           <div class="col-lg-3">
             <a href="#" class="person">
               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/45c86d35199529.56ed7ab7cb9b4.gif" alt="Image" class="img-fluid mb-4">
               <h3 class="mb-3 text-white text-center">STEP 02</h3>
-              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p class="text-muted text-center">Put an appropriate amount into a cup.</p>
             </a>
           </div>
           <div class="col-lg-3">
             <a href="#" class="person">
               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1ff18c35199529.56ed7f7c29a37.gif" alt="Image" class="img-fluid mb-4">
               <h3 class="mb-3 text-white text-center">STEP 03</h3>
-              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p class="text-muted text-center">Pour the fragrant grapefruit juice into a cup.</p>
             </a>
           </div>
           
@@ -195,12 +191,12 @@
             <a href="#" class="person">
               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2d0bb235199529.56ed7ab665072.gif" alt="Image" class="img-fluid mb-4">
               <h3 class="mb-3 text-white text-center">STEP 04</h3>
-              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p class="text-muted text-center">Stir well with a spoon and it will be even better!</p>
             </a>
           </div>
 
           <!-- 공간을 위한 배치 -->
-          <div class="col-lg-3">
+          <div class="col-lg-3 ">
             <a href="#" class="person">
               <img src="" alt="" class="img-fluid mb-4">
               <h3 class="mb-3 text-white text-center"></h3>
@@ -210,16 +206,16 @@
 
           <div class="col-lg-3">
             <a href="#" class="person">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e92eb235199529.56ed7ab614cec.gif" alt="Image" class="img-fluid mb-4">
+              <img style="margin-top: 30px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e92eb235199529.56ed7ab614cec.gif" alt="Image" class="img-fluid mb-4">
               <h3 class="mb-3 text-white text-center">STEP 05</h3>
-              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p class="text-muted text-center">If you add a secret ingredient, it can taste even better.</p>
             </a>
           </div>
           <div class="col-lg-3">
             <a href="#" class="person">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/919a8435199529.56ed7ab90abdf.gif" alt="Image" class="img-fluid mb-4">
+              <img style="margin-top: 30px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/919a8435199529.56ed7ab90abdf.gif" alt="Image" class="img-fluid mb-4">
               <h3 class="mb-3 text-white text-center">STEP 06</h3>
-              <p class="text-muted text-center">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p class="text-muted text-center">Adding lemon at the end makes it perfect.</p>
             </a>
           </div>
 
@@ -238,6 +234,11 @@
   <!-- 후기 소개 -->
     <div class="section">
       <div class="container">
+        <div>
+          <img src="{% static 'cheers/image/main 후기 문구.png' %}" alt="">
+        </div>
+         
+      
         
         <div class="row align-items-stretch">
           <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
@@ -246,8 +247,8 @@
                 <img src="https://shakit.co.kr/data/editor/2108/thumb-dff5a820220ffe8b45cc2b090df9106c_1627982309_4958_600x800.jpg" alt="Image" class="img-fluid">
               </a>
               <div class="bg-white m-body">
-                <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <span class="date">May 14, 2022</span>
+                <h3><a href="index.html">저녁에 꼭 하나씩 만들어 먹는 재미가 있어요</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
   
                 <a href="single.html" class="more d-flex align-items-center float-start">
@@ -263,8 +264,8 @@
                 <img src="https://shakit.co.kr/data/editor/2205/thumb-def86918acc882f5445ae2daf5bad0b9_1652396173_177_600x800.jpg" alt="Image" class="img-fluid">
               </a>
               <div class="bg-white m-body">
-                <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <span class="date">May 20, 2022</span>
+                <h3><a href="index.html">캠핑가서 즐겁게 보낼 수 있었던 이유</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
   
                 <a href="single.html" class="more d-flex align-items-center float-start">
@@ -281,7 +282,7 @@
               </a>
               <div class="bg-white m-body">
                 <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <h3><a href="index.html">크린베리 칵테일 추천합니다</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
                 <a href="single.html" class="more d-flex align-items-center float-start">
                   <span class="label">Read More</span>
@@ -297,7 +298,7 @@
               </a>
               <div class="bg-white m-body">
                 <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <h3><a href="index.html">칵테일과 어울리는 안주 추천</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
                 <a href="single.html" class="more d-flex align-items-center float-start">
                   <span class="label">Read More</span>
@@ -314,7 +315,7 @@
               </a>
               <div class="bg-white m-body">
                 <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <h3><a href="index.html">코로나도 이기는 칵테일</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
   
                 <a href="single.html" class="more d-flex align-items-center float-start">
@@ -331,7 +332,7 @@
               </a>
               <div class="bg-white m-body">
                 <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <h3><a href="index.html">회의하면서 각자 술 자랑하기</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
   
                 <a href="single.html" class="more d-flex align-items-center float-start">
@@ -348,7 +349,7 @@
               </a>
               <div class="bg-white m-body">
                 <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <h3><a href="index.html">러블리한 분위기와 어울리는 칵테일</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
                 <a href="single.html" class="more d-flex align-items-center float-start">
                   <span class="label">Read More</span>
@@ -364,7 +365,7 @@
               </a>
               <div class="bg-white m-body">
                 <span class="date">May 14, 2020</span>
-                <h3><a href="index.html">Far far away, behind the word mountains</a></h3>
+                <h3><a href="index.html">젤리로 데코해봤어요 젤리랑도 어울려요</a></h3>
                 <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
                 <a href="single.html" class="more d-flex align-items-center float-start">
                   <span class="label">Read More</span>
