@@ -1,495 +1,462 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block css %}
-<style>
-  .best_item_list .amount {
-             padding-left: 18px;
-             background-image: url(/img/common/item_arrow_.png);
-             background-repeat: no-repeat;
-             background-position: 4px 9px;
-             font-size: 16px;
-             color: #583637
-           }
 
-           .best_item_list table {
-             width: 100%;
-           }
-
-           .best_item_list td {
-             width: 20%;
-             vertical-align: top;
-           }
-
-           .best_item_list td div {
-             line-height: 26px;
-             color: #636363;
-             margin: 0 auto !important;
-             text-align: center;
-           }
-
-           .best_item_list .sct_txt {
-             font-weight: bold;
-             font-size: 13x;
-             color: #58595b
-           }
-
-           .item_btn_ex {
-             position: absolute;
-             bottom: 10px;
-             right: 10px
-           }
-</style>
-{% endblock css %}
 
 
 {% block body %}
 
 <!-- BEST 상품 -->
-<div class="py-5">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-  <h2 class="">와인 BEST5 <small class="text-muted">와인 BEST5</small></h2>
-  <div class="row" >
-    <div class="col-md-12">
-      <table class="best">
-        <tbody>
-          <tr>
-            <td>
-              <!-- 상품진열 10 시작 { -->
-              <table class="best">
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="listImg best0">
-                        <a href="http://www.kajawine.kr/shop/item.php?it_id=1651198827" class="sct_a">
-                          <span class="best_icon"></span>
-                          <img src="http://www.kajawine.kr/data/item/1651198827/thumb-7ZWc7IKw7IaM6rOh7KO8_175x234.jpg" alt="한산 소곡주 명화 1호 (VAT별도) 현금가" title="" width="175" height="234">
-                        </a></div>
-                      <div class="sct_txt"><a href="http://www.kajawine.kr/shop/item.php?it_id=1651198827" class="sct_a"> 한산 소곡주 명화 1호 (VAT별도) 현금가 </a></div>
-                      <div class="it_origin">대한민국</div>
-                      <div class="sct_cost">
-                        <strike>120,000원</strike>
-                        <span class="amount">110,000원</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="listImg best1"><a href="http://www.kajawine.kr/shop/item.php?it_id=1505039922" class="sct_a"><span class="best_icon"></span>
-                          <img src="http://www.kajawine.kr/data/item/1505039922/thumb-1505039922_l1_175x234.jpg" alt="천지향 복분자스페셜 세트(700*2,잔1개)" title="" width="175" height="234">
-                        </a></div>
-                      <div class="sct_txt"><a href="http://www.kajawine.kr/shop/item.php?it_id=1505039922" class="sct_a"> 천지향 복분자스페셜 세트(700*2,잔1개) </a></div>
-                      <div class="sct_cost">
-                        <strike>110,000원</strike>
-                        <span class="amount">100,000원</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="listImg best2"><a href="http://www.kajawine.kr/shop/item.php?it_id=1467331636" class="sct_a"><span class="best_icon"></span>
-                          <img src="http://www.kajawine.kr/data/item/1467331636/thumb-1467331636_l1_175x234.jpg" alt="화요 375ml 3종 선물세트 (VAT별도) 현금가" title="" width="175" height="234">
-                        </a></div>
-                      <div class="sct_txt"><a href="http://www.kajawine.kr/shop/item.php?it_id=1467331636" class="sct_a"> 화요 375ml 3종 선물세트 (VAT별도) 현금가 </a></div>
-                      <div class="sct_cost">
-                        <strike>75,000원</strike>
-                        <span class="amount">68,000원</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="listImg best3"><a href="http://www.kajawine.kr/shop/item.php?it_id=1462597896" class="sct_a"><span class="best_icon"></span>
-                          <img src="http://www.kajawine.kr/data/item/1462597896/thumb-1462597896_l1_175x234.jpg" alt="화요53도750ml(증류식소주)" title="" width="175" height="234">
-                        </a></div>
-                      <div class="sct_txt"><a href="http://www.kajawine.kr/shop/item.php?it_id=1462597896" class="sct_a"> 화요53도750ml(증류식소주) </a></div>
-                      <div class="sct_cost">
-                        <strike>94,000원</strike>
-                        <span class="amount">85,000원</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="listImg best4"><a href="http://www.kajawine.kr/shop/item.php?it_id=1453516309" class="sct_a"><span class="best_icon"></span>
-                          <img src="http://www.kajawine.kr/data/item/1453516309/thumb-67O167aE7J6Q7IS47Yq4_175x234.jpg" alt="천지향복분자 백8호(400*2,잔2개)" title="" width="175" height="234">
-                        </a></div>
-                      <div class="sct_txt"><a href="http://www.kajawine.kr/shop/item.php?it_id=1453516309" class="sct_a"> 천지향복분자 백8호(400*2,잔2개) </a></div>
-                     
-                      <div class="sct_cost">
-                        <strike>66,000원</strike>
-                        <span class="amount">60,000원</span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-      </table>
+<div style="margin-top: 145px; background-color: #fff;" class="section service-section-1">
+  
+  <div class="container">
+    <div style="margin-bottom: 30px;">
+      <h2 class="fw-bolder">BEST 5 <br>
+      <small style="font-size: 16px;" class="text-muted">Cheers에서 선택한 BEST5 위스키를 확인해보세요</small></h2>
+    </div>
+    <!-- 첫번째 -->
+    <div class="row">
+      <div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
+        <div class="service-1">
+          <div class="text-center">
+            <img style="width: 250px; height:300px;" src="http://www.kajawine.kr/data/item/1651198827/thumb-7ZWc7IKw7IaM6rOh7KO8_175x234.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div>
+            <h3 class="mt-4 text-center">한산 소곡주 명화</h3>
+            <p class="text-center">대한민국</p>
+            <div class="sct_cost text-center">
+              <strike>180,000원</strike>
+              <span class="amount">105,000원</span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- 두번째 -->
+      <div class="col-lg-9">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
+            <div class="service-1">
+              <div class="text-center">
+                <img style="width: 250px; height:300px;" src="http://www.kajawine.kr/data/item/1505039922/thumb-1505039922_l1_175x234.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div>
+                <h3 class="mt-4 text-center">천지향 복분자 스페셜</h3>
+                <p class="text-center">대한민국</p>
+                <div class="sct_cost text-center">
+                  <strike>100,000원</strike>
+                  <span class="amount">60,000원</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- 세번째 -->
+          <div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
+            <div class="service-1">
+              <div class="text-center">
+                <img style="width: 250px; height:300px;" src="http://www.kajawine.kr/data/item/1467331636/thumb-1467331636_l1_175x234.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div>
+                <h3 class="mt-4 text-center">화요 3종 세트</h3>
+                <p class="text-center" >대한민국</p>
+                <div class="sct_cost text-center">
+                  <strike>68,000원</strike>
+                  <span class="amount">45,000원</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- 네번째 -->
+          <div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
+            <div class="service-1">
+              <div >
+                <img style="width: 250px; height:300px;" src="http://www.kajawine.kr/data/item/1462597896/thumb-1462597896_l1_175x234.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div class="text-center">
+                <h3 class="mt-4 text-center">화요 53도</h3>
+                <p class="text-center">대한민국</p>
+                <div class="sct_cost text-center">
+                  <strike>150,000원</strike>
+                  <span class="amount">95,000원</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- 다섯번째 -->
+          <div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
+            <div class="service-1">
+              <div >
+                <img style="width: 250px; height:300px;" src="http://www.kajawine.kr/data/item/1453516309/thumb-67O167aE7J6Q7IS47Yq4_175x234.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div>
+                <h3 class="mt-4 text-center">천지향 복분자 백8호</h3>
+                <p class="text-center">대한민국</p>
+                <div class="sct_cost text-center">
+                  <strike>70,000원</strike>
+                  <span class="amount">49,000원</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
-</div>
-</div>
-</div>
 
 
-<!-- 상품 소개 Banner -->
+<!-- 광고 -->
 <div class="py-5" >
 <div class="container">
-<div class="row">
-<div class="col-lg-8 p-md-5 p-3 d-flex flex-column justify-content-center">
-  <h1>상품 소개 BANNER</h1>
-  <p class="mb-0">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
-</div>
-<div class="col-lg-4 p-3">
-  <div id="carousel2" class="carousel slide" data-ride="carousel" data-interval="5000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a03f68117053575.606e8cc92bc3b.jpg"> </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/b570b2117053575.606e8cca4a27c.jpg"> </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/056ce2117053575.606e9a8dd6469.jpg"> </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ea8e56117053575.606e8cc970c30.jpg"> </div>
+  <div class="row">
+    <div class="col">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/879b6e149409643.63319587718ae.jpg" class="d-block w-100" alt="홍보1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/e0abed149409643.63333941c70b6.jpg" class="d-block w-100" alt="홍보2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/440c94149409643.6331958772213.jpg" class="d-block w-100" alt="홍보3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden coloe">Next</span>
+        </button>
+      </div>
     </div>
-    <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
-    <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+    <div class="col">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          <div  class="carousel-item active">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/262f97155239733.6350abad5990a.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div  class="carousel-item active">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/262f97155239733.6350abad5990a.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div   class="carousel-item active">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/262f97155239733.6350abad5990a.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 </div>
-</div>
-</div>
+
+
 
 <!-- title -->
-<section>
-<div class="container">
-<h2>
-<span>OUR PICK</span>
-</h2>
-<span class="sub_tit">와인나라팀에서 특별히 선정한 상품들을 만나보세요.</span>
-<pre></pre>
-<div class="result_tab">
-<ul class="d-flex justify-content-around text-decoration-none">
-  <li class="on"><button type="button">FALL PICK</button></li>
-  <li class=""><button type="button">이달의 와인</button></li>
-  <li class=""><button type="button">시그니처 와인</button></li>
-</ul>
-</div>
-</div>
+<section style="margin-top: 80px;">
+  <div class="container">
+    <h2>
+      <span>OUR PICK</span>
+    </h2>
+    <span class="sub_tit">Cheers팀에서 특별히 선정한 상품들을 만나보세요.</span>
+    <pre></pre>
+  </div>
 
 <!-- card -->
-
-<!-- 첫번째 -->
+<!-- 첫번째 줄 -->
 <div class="py-5" >
-<div class="container">
-<div class="row">
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/b818c64542cfccb9ad83234c1110e254.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/ac2ca885ea73ebc041874209d240cac8.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-</div>
-</div>
-</div>
-
-
-<!-- 두번째 -->
-<div class="py-5" >
-<div class="container">
-<div class="row">
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-</div>
-</div>
-</div>
-
-
-<!-- 세번째 -->
-<div class="py-5" >
-<div class="container">
-<div class="row">
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-</div>
-</div>
-</div>
-
-
-<!-- 네번째 -->
-<div class="py-5" >
-<div class="container">
-<div class="row">
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="col-md-12">
-    <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-    <div class="card text-center">
-      <div class="card-footer text-muted">
-        <ul class="nav nav-pills">
-          <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-          <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-    <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-    <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-  </div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- 다섯번째 -->
-<div class="py-5" >
-<div class="container">
-<div class="row">
-  <div class="col-md-4">
-    <div class="col-md-12">
-      <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-      <div class="card text-center">
-        <div class="card-footer text-muted">
-          <ul class="nav nav-pills">
-            <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-          </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1617333298/thumb-6rCQ7ZmN66Gc_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">감홍로</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
         </div>
       </div>
-      <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-      <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-      <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="col-md-12">
-      <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-      <div class="card text-center">
-        <div class="card-footer text-muted">
-          <ul class="nav nav-pills">
-            <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-          </ul>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1425777045/thumb-1425777045_l1_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">화요 25도</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
         </div>
       </div>
-      <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-      <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-      <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="col-md-12">
-      <img class="img-fluid d-block" src="https://www.winenara.com/uploads/product/f2b80eed7afe4af770b9c22e1fbb1cc2.png">
-      <div class="card text-center">
-        <div class="card-footer text-muted">
-          <ul class="nav nav-pills">
-            <li class="nav-item"> <a href="#" class="active nav-link"><i class="d-block fa fa-lg fa-bell-o"></i></a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-area-chart"></i></a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#"><i class="d-block fa fa-lg fa-clock-o"></i></a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"><i class="d-block fa fa-lg fa-cloud-upload"></i></a> </li>
-          </ul>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1425776724/thumb-1425776724_l1_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">화요 17도</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
         </div>
       </div>
-      <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-      <p class="lead">Lead paragraph. A wonderful serenity has taken possession of my entire soul.</p>
-      <h3 class="">Heading 3 <span class="badge badge-light"> New</span></h3>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1647745677/thumb-7ZmU7JqU25375_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">화요 23도</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
+
+<!-- 두번째 줄 -->
+<div class="py-5" >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1639621458/thumb-66y46rK967CU656M7Jik7YGs40_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">문경바람 오크</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1637285143/thumb-6rOg7Jq064us7Jik7YGs_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">고운달 오크</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1637285125/thumb-6rOg7Jq064us67Cx7J6Q_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">고운달 백자</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1629252459/thumb-7ISc7Jq47J2Y67Ck_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">서울의 밤</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- 세번째 줄 -->
+<div class="py-5" >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1505447956/thumb-1505447956_l1_160x214.jpg"" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">매실 원주 천매세트</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1639622868/thumb-7JWI64Z7IaM7KO867aA67aA7YOI7IS47Yq4_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">안동 소주 부부탈 세트</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1662858967/thumb-7Jik66ek65297Y297IS47Yq4_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">오매락 퍽</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1649645678/thumb-7J206rCV7KO87IS47Yq4_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">이강주 프리미엄</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- 네번째 줄 -->
+<div class="py-5" >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1637285280/thumb-64W56rOg7J2Y64iI66y8_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">녹고의 눈물</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1637285098/thumb-6raB7KSR7Iig7JmV7KO8_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">궁중술 왕주</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1637205287/thumb-7Yah7ZWc7J6U7IaM7KO8_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">톡 한잔 소주</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-style: none;" class="card" >
+          <figure style="width: 160px; height: 214px; margin-left: 70px;">
+            <img  src="http://www.kajawine.kr/data/item/1637286911/thumb-7J206rCV7KO825_160x214.jpg" class="card-img-top d-flex justify-content-center" alt="...">
+            <figcaption>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+            <h5 class="card-title text-center">이강주 25도</h5>
+            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content:center;">
+              <button  type="button" class="btn btn-lg">button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock body %}
-
-
-
-   
