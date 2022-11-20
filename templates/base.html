@@ -62,19 +62,19 @@
               <!-- 왼쪽 메뉴 -->
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="{% url 'main' %}">Home</a>
+                  <a class="nav-link text-white fs-5" href="{% url 'main' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">About</a>
+                  <a class="nav-link text-white fs-5" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="{% url 'recipe-main' %}">Recipe</a>
+                  <a class="nav-link text-white fs-5" href="{% url 'recipe-main' %}">Recipe</a>
                 </li>
            
               </ul>
               <!-- 로고 -->
 
-              <img style="width: 110px;" src="{% static 'cheers/image/cheers_logo.png' %}" alt="">
+              <img style="width: 130px;" src="{% static 'cheers/image/cheers_logo.png' %}" alt="">
 
               <!-- 오른쪽 메뉴 -->
               <ul class="navbar-nav ml-auto">
@@ -83,13 +83,13 @@
                   <li>
                     <a href="{% url 'admin:index' %}">관리자</a></li>
                 {% endif %}
-                <li class="nav-item"><a class="nav-link text-white" href="{% url 'main' %}">홈으로</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="{% url 'profile' user.id %}">내 프로필</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="{% url 'account_logout' %}">로그아웃</a></li>
+                <!-- <li class="nav-item"><a class="nav-link text-white" href="{% url 'main' %}">홈으로</a></li> -->
+                <li class="nav-item"><a class="nav-link text-white  fs-5" href="{% url 'profile' user.id %}">내 프로필</a></li>
+                <li class="nav-item"><a class="nav-link text-white  fs-5" href="{% url 'account_logout' %}">로그아웃</a></li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link text-white" href="{% url 'main' %}">홈으로</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="{% url 'account_login' %}">로그인</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="{% url 'account_signup' %}">회원가입</a></li>
+                <!-- <li class="nav-item"><a class="nav-link text-white" href="{% url 'main' %}">홈으로</a></li> -->
+                <li class="nav-item"><a class="nav-link text-white  fs-5" href="{% url 'account_login' %}">로그인</a></li>
+                <li class="nav-item"><a class="nav-link text-white  fs-5" href="{% url 'account_signup' %}">회원가입</a></li>
                 {% endif %}
               </ul>
             </div>
