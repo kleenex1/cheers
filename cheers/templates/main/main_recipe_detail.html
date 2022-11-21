@@ -1,75 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block css %}
-  <style>
-    .ico {
-      position: absolute;
-      left: 0;
-      /* right:; */
-      bottom: 0;
-      padding: 2px 12px;
-      font-size: 11px;
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.7);
-      background-position-x: 0%;
-      background-position-y: 0%;
-      background-repeat: repeat;
-      background-attachment: scroll;
-      background-image: none;
-      background-size: auto;
-      background-origin: border-box;
-      box-sizing: border-box;
-      line-height: 20px;
-      left: -10px;
-      margin: 25px;
-    }
-  </style>
-  
-{% endblock css %}
-
 
 
 {% block body %}
 <!-- 칵테일 레시피 디테일 페이지 -->
 <!-- 시작 -->
-<body style="height: 3000px;">
    
 
   <!-- 칵테일 레시피 디테일 페이지 -->
   <!-- 시작 -->
-  <div class="py-5">
+  <div style="margin-top: 250px;" class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 p-3" ></div>
-      </div>
-  <!-- 레시피 디테일 페이지 title -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p  class="d-flex justify-content-center" >Peach Crush DETAIL</p>
-            <h1 style="font-weight: 700;" class="d-flex justify-content-center" >Peach Crush</h1>
-          </div>
+        <div class="col-md-12 p-3" >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <p  class="d-flex justify-content-center" >&nbsp;&nbsp; Peach Crush DETAIL</p>
+                <h1 style="font-weight: 700;" class="d-flex justify-content-center" >&nbsp; Peach Crush</h1>
+              </div>
+            </div>
         </div>
+      </div>
+
   <!-- 레시피 디테일 페이지 메인 사진  -->
       <div class="row">
         <div class="col-md-12 p-3">
-          <img style="margin-left: 50px;" class="rounded-5 d-block d-flex justify-content-center " src="https://shakit.co.kr/data/item/1619145939/2049028623_0OCciv38_35efd09f8ced676b6131e5fd120f094b25c24c6f.png"> </div>
+          <img style="margin-left: 140px;" class="rounded-5 d-block d-flex justify-content-center " src="https://shakit.co.kr/data/item/1619145939/2049028623_0OCciv38_35efd09f8ced676b6131e5fd120f094b25c24c6f.png"> </div>
       </div>
     </div>
   </div>
+
   <!-- 레시피 디테일 추천 소개 -->
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div style="margin-left: 50px;"class="col-md-12 d-block d-flex justify-content-center ">
+        <div style="margin-left: 30px;"class="col-md-12 d-block d-flex justify-content-center ">
           <img class="rounded-5" src="https://shakit.co.kr/data/item/1619145939/02_67CU7YWQ642U64W47Yq4_7YWM7Iqk7Yq46riw.png"></div>
       </div>
     </div>
   </div>
   
   <!-- 레시피 준비물 제목 -->
-  <div class="container py-3">
+  <div class="container py-5">
     <div class="row">
       <div class="col-md-12">
         <h1 style="font-weight: 700;" class="d-flex justify-content-center" >Peach Crush 재료 소개</h1>
@@ -79,109 +53,127 @@
   
   
   <!-- 레시피 준비물 소개 -->
-  
-  <!-- 레시피 준비물 소개 1 -->
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="p-0 col-lg-5 order-2 order-lg-1">
-          <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1594894751/thumb-7Iuk67KE7KeA6rGw_332x332.jpg"> </div>
-        <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
-          <h3 class="fw-3">JIGGER 지거</h3>
-          <p class="lead mb-0">재료의 용량을 정확히 잴 수 있는 칵테일 용품 입니다.  <br> 지거를 사용하여 CHEERS 기본 레시피 뿐만 아니라 나만의 레시피를 만들어 보세요.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="p-0 col-lg-5 order-2 order-lg-1">
+                <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1594894751/thumb-7Iuk67KE7KeA6rGw_332x332.jpg"> </div>
+              <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+                <h3 class="fw-3">JIGGER 지거</h3>
+                <p class="lead mb-0">재료의 용량을 정확히 잴 수 있는 칵테일 용품 입니다.  <br> 지거를 사용하여 CHEERS 기본 레시피 뿐만 아니라 나만의 레시피를 만들어 보세요.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="col">
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="p-0 col-lg-5 order-2 order-lg-1">
+                <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1629770150/thumb-67O17Iit7JWE7Iuc659_7KCV66m0_332x332.jpg"> </div>
+              <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+                <h3>PEACH SYRUP 복숭아 시럽(60CC)</h3>
+                <p class="lead mb-0">천연 복숭아 향 가득, 상큼 달달한 복숭아 향을 넣어준다면 칵테일을 더 맛있게 드실 수 있습니다. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="p-0 col-lg-5 order-2 order-lg-1">
+                <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627265146/thumb-7ImQ7J207YK36657Iqk_332x332.jpg"> </div>
+              <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+                <h3>믹스(120CC) Cocktail Mix</h3>
+                <p class="lead mb-0">믹스 하나만으로 칵테일을 끝낼 수 있도록 특별한 레시피로 만든 전용 믹스 입니다. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="p-0 col-lg-5 order-2 order-lg-1">
+                <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627445418/thumb-7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Jik66CM7KeA7KO87Iqk_332x332.jpg"> </div>
+              <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+                <h3> 오렌지 주스(250CC) Orange Juice</h3>
+                <p class="lead mb-0">갓 딴 과일의 신선함ㅇ르 그대로 느낄 수 있는 오렌지 과즙 100% 콜드 오렌지 주스입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="p-0 col-lg-5 order-2 order-lg-1">
+                <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1629771506/thumb-7YGs66CM67Kg66as7KO87Iqk_332x332.jpg"> </div>
+              <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+                <h3>크렌베리 주스(250CC) Cranberry Juice</h3>
+                <p class="lead mb-0">산도가 높은 레드베리 계열인 크렌베리 100% 주스</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="p-0 col-lg-5 order-2 order-lg-1">
+                <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627609802/thumb-6rG07Jik66CM7KeA_332x332.jpg"> </div>
+              <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
+                <h3>건 오렌지 슬라이스 4개 Dried Orange Slices</h3>
+                <p class="lead mb-0">신선한 오렌지를 잘 선별하여 건조한 오렌지 슬라이스 입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col"></div>
+      <div class="col"></div>
     </div>
   </div>
   
-  <!-- 레시피 준비물 소개 2 -->
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="p-0 col-lg-5 order-2 order-lg-1">
-          <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1629770150/thumb-67O17Iit7JWE7Iuc659_7KCV66m0_332x332.jpg"> </div>
-        <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
-          <h3>PEACH SYRUP 복숭아 시럽(60CC)</h3>
-          <p class="lead mb-0">천연 복숭아 향 가득, 상큼 달달한 복숭아 향을 넣어준다면 칵테일을 더 맛있게 드실 수 있습니다. </p>
-        </div>
-      </div>
-    </div>
-  </div>
+
   
-  <!-- 레시피 준비물 소개 3 -->
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="p-0 col-lg-5 order-2 order-lg-1">
-          <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627265146/thumb-7ImQ7J207YK36657Iqk_332x332.jpg"> </div>
-        <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
-          <h3>믹스(120CC) Cocktail Mix</h3>
-          <p class="lead mb-0">믹스 하나만으로 칵테일을 끝낼 수 있도록 특별한 레시피로 만든 전용 믹스 입니다. </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- 레시피 준비물 소개 4 -->
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="p-0 col-lg-5 order-2 order-lg-1">
-          <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627445418/thumb-7I2464Sk7J28_7KCV7IKs6rCB7ZiV_7Jik66CM7KeA7KO87Iqk_332x332.jpg"> </div>
-        <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
-          <h3> 오렌지 주스(250CC) Orange Juice</h3>
-          <p class="lead mb-0">갓 딴 과일의 신선함ㅇ르 그대로 느낄 수 있는 오렌지 과즙 100% 콜드 오렌지 주스입니다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- 레시피 준비물 소개 5 -->
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="p-0 col-lg-5 order-2 order-lg-1">
-          <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1629771506/thumb-7YGs66CM67Kg66as7KO87Iqk_332x332.jpg"> </div>
-        <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
-          <h3>크렌베리 주스(250CC) Cranberry Juice</h3>
-          <p class="lead mb-0">산도가 높은 레드베리 계열인 크렌베리 100% 주스</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- 레시피 준비물 소개 6 -->
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="p-0 col-lg-5 order-2 order-lg-1">
-          <img class="img-fluid d-block rounded-circle" src="https://shakit.co.kr/data/item/1627609802/thumb-6rG07Jik66CM7KeA_332x332.jpg"> </div>
-        <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2" style="">
-          <h3>건 오렌지 슬라이스 4개 Dried Orange Slices</h3>
-          <p class="lead mb-0">신선한 오렌지를 잘 선별하여 건조한 오렌지 슬라이스 입니다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
   
   <!--  레시피 만드는 방법 -->
   <div class="py-5">
-    <div class="container">
+    <div style="margin: 50px;" class="container">
       <div class="row">
         <div class="col-md-12">
           <h2 style="margin-bottom: 50px; display:flex; justify-content:center;">칵테일 레시피를 확인해보세요.</h2>
-          <div class="card">
+          <div class="card text-center">
             <div class="card-body">
               <h5 class="card-title"><b>한잔 칵테일 만드는 방법</b></h5>
-              <h6 class="card-subtitle my-2 text-muted">Subtitle</h6>
+              <pre></pre>
+              <!-- <h6 class="card-subtitle my-2 text-muted">Subtitle</h6> -->
               <p class="card-text">1. 글라스에 가득 얼음을 넣어주세요. (크러시드 아이스를 사용해도 좋아요!)</p>
               <p class="card-text">얼음이 담긴 글라스에 지거를 이용하여 브이 스피릿 30CC, 복숭아 시럽 15CC, 쉐이킷 믹스 20CC, <br>
               오렌지 주스 60CC, 크렌베리 주스 60CC를 차례로 넣어주세요.</p>
               <p class="card-text">3. 완성된 칵테일에 건 오렌지 슬라이스 1개를 장식해 주세요.</p>
               <p class="card-text">4. 드시기 전에 내용물이 잘 섞이도록 충분히 저어주세요.</p>
               <p class="card-text">* 무알코올 칵테일은 취향에 맞게 복숭아 시럽 15CC를 기준으로 증감하여 즐기세요.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <!-- <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a> -->
+              <pre></pre>
             </div>
           </div>
         </div>
@@ -195,8 +187,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="card-body">
-            <h5 class="card-title"></h5>
-            <iframe style="margin-left: 50px;" width="950" height="600" src="https://www.youtube.com/embed/5px2kPUMX-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <h5 class="card-title">한잔 칵테일 만드는 방법 영상</h5> -->
+            <div style="display: flex; justify-content: center;">
+              <iframe style="margin-left: 50px;" width="950" height="600" src="https://www.youtube.com/embed/5px2kPUMX-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -208,21 +202,27 @@
   
   <!-- 상품 소셜 후기  -->
   <div class="py-5">
+    <div style="display: flex; justify-content: center; margin-top: 60px;" class="title">
+      <h1>Social Reviews</h1>
+    </div>
+  </div>
+ 
+  <div class="py-2">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
           <div class="thumb_row">
-            <span class="ico">인스타그램</span>
+            <span style="margin: 0px; left: 14px;" class="ico">인스타그램</span>
             <img class="img-fluid d-block mb-3" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_yBx4LUOr_8c75484a71925dfe80220549ce8f626e784b93fe.jpg"></div>
           </div>
         <div class="col-md-3">
-          <span class="ico">네이버</span>
+          <span style="margin: 0px; left: 14px;" class="ico">네이버</span>
           <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_10YO3bJz_59cd0d6e1eec15339e434a4612613553928a6a64.jpg"></div>
         <div class="col-md-3">
-          <span class="ico">인스타그램</span>
+          <span style="margin: 0px; left: 14px;" class="ico">인스타그램</span>
           <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_0QiuURO7_da4aac9d8cb1c5705cf03d0095d2082bce181ebb.jpg"></div>
         <div class="col-md-3">
-          <span class="ico">네이버</span>
+          <span style="margin: 0px; left: 14px;" class="ico">네이버</span>
           <img class="img-fluid d-block" src="https://shakit.co.kr/data/file/bestreview/3068359458_4apNqBud_3e32c61f04757964c8131e8fd43c7fb3558813d9.jpg"></div>
         <div class="col-md-3">
           <span style="margin: 0px; left: 14px;" class="ico">인스타그램</span>
@@ -243,16 +243,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <span class="ico">네이버</span>
+          <span style="margin: 0px; left: 14px;" class="ico">네이버</span>
           <img class="img-fluid d-block mb-3" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_w35TeaYN_e2288f86512172f8e9dc70d63efa4fa54e501a12.jpg"></div>
         <div class="col-md-3">
-          <span class="ico">트위터</span>
+          <span style="margin: 0px; left: 14px;" class="ico">트위터</span>
           <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_janV3Rgv_ac1134cb5f16945a7f98d29895f22981b80bc019.jpg"></div>
-        <div class="col-md-3">
-          <span class="ico">인스타그램</span>
+        <div style="margin: 0px; left: 14px;" class="col-md-3">
+          <span style="margin: 0px; left: 14px;" class="ico">인스타그램</span>
           <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_VcGjuJ4R_a7b827e20c9df3d2e07f51b466023b8412c6d8d0.jpg"></div>
         <div class="col-md-3">
-          <span class="ico">네이버</span>
+          <span style="margin: 0px; left: 14px;" class="ico">네이버</span>
           <img class="img-fluid d-block" src="https://www.shakit.co.kr/data/file/bestreview/3068359458_BQW0wDKx_8003b83994d00e5a1f7f0944fd978738f84a73a6.jpg"></div>
         <div class="col-md-3">
           <span style="margin: 0px; left: 14px;" class="ico">트위터</span>
