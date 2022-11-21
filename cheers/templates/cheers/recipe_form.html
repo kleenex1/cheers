@@ -67,7 +67,7 @@
 
     <div class="buttons">
       <a class="cheers-button secondary cancel" 
-      href="{% if recipe %}{% url 'recipe-detail' recipe.id %}{% else %}{% url 'recipe-main' %}{% endif %}">
+      href="{% if recipe %}{% url 'recipe-detail' recipe.id %}{% else %}{% url 'recipe-user' %}{% endif %}">
       취소
       </a>
       <button class="cheers-button submit" type="submit">완료</button>
