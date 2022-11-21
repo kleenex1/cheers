@@ -39,7 +39,6 @@
     <link rel="stylesheet" href="{% static 'cheers/css/flatpickr.min.css' %}">
     <link rel="stylesheet" href="{% static 'cheers/css/glightbox.min.css' %}">
     <link rel="stylesheet" href="{% static 'cheers/css/style.css' %}">
-       
     <link rel="stylesheet" href="{% static 'cheers/css/main.css' %}">
 
     <!-- 유저기능 CSS-->
@@ -68,7 +67,9 @@
                   <a class="nav-link text-white fs-5" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white fs-5" href="#">Recipe</a>
+
+                  <a class="nav-link text-white fs-5" href="{% url 'main-recipe' %}">Recipe</a>
+
                 </li>
            
               </ul>
@@ -109,7 +110,7 @@
                   <b>WHISKEY</b></a> </li>
                 <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-white" href="{% url 'korea' %}">
                     <b> SAKE/KOREA/CHINA</b></a> </li>
-                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="{% url 'recipe-main' %}">
+                <li class="nav-item mx-2"> <a class="nnav-link navbar-brand mr-0 text-white" href="{% url 'recipe-user' %}">
                   <b> 🍹 Recipe </b></a> </li>
               </ul>
             </div>

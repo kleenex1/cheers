@@ -4,9 +4,9 @@ from . import views
 
 urlpatterns = [
     # 메인
-    path('', TemplateView.as_view(template_name="cheers/main.html") ,name="main"),
+    path('', TemplateView.as_view(template_name="main/main.html") ,name="main"),
     # 레시피
-    path('recipe-main', views.RecipeMainView.as_view(), name='recipe-main'),
+    path('recipe-user', views.RecipeMainView.as_view(), name='recipe-user'),
     path('recipes/', views.RecipeListView.as_view(), name='recipe-list'),
     path('recipes/following/', views.FollowingRecipeListView.as_view(), name='following-recipe-list'),
     path('recipes/<int:recipe_id>/', views.RecipeDetailView.as_view(),name='recipe-detail'),
@@ -32,7 +32,11 @@ urlpatterns = [
     path('search/', views.SearchView.as_view(), name='search'),
 
     # 백엔드없는 페이지
-    path('korea/', TemplateView.as_view(template_name="main/P_korea.html") ,name="korea"),
-    path('whiskey/', TemplateView.as_view(template_name="main/P_whiskey.html") ,name="whiskey"),
+    path('korea/', TemplateView.as_view(template_name="main/P_korea.html"), name="korea"),
+    path('whiskey/', TemplateView.as_view(template_name="main/P_whiskey.html"), name="whiskey"),
     path('wine/', TemplateView.as_view(template_name="main/P_wine.html") ,name="wine"),
+    path('main-recipe.', TemplateView.as_view(template_name="main/main_recipe_detail.html"), name="main-recipe"),
+    path('korea-detail/', TemplateView.as_view(template_name="main/korea_detail.html"), name="korea-detail"),
+    path('wine-detail/', TemplateView.as_view(template_name="main/wine_detail.html"), name="wine-detail"),
+    path('whiskey-detail/', TemplateView.as_view(template_name="main/whiskey_detail.html"), name="whiskey-detail"),
 ]
