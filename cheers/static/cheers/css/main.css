@@ -353,3 +353,38 @@ header .badges .badge {
   -webkit-transform: scale(1.3);
 	transform: scale(1.3);
 }
+
+.ico {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: red;
+  color: #fff;
+  padding: 3px 10px;
+}
+
+/* .ico2{
+  position: absolute;
+  left: 14;
+  top: 50px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: red;
+  color: #fff;
+  padding: 3px 10px;
+  margin: 0;
+
+  display: inline-block;
+  margin-left: 5px;
+  color: #e1e1e1;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.ico2:hover{
+  color: #fbb72c;
+} */
