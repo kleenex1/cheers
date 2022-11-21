@@ -348,3 +348,8 @@ header .badges .badge {
   }
 
 
+/* 레시피 */
+.col-md-4 .img:hover {
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
