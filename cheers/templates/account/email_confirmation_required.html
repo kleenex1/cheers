@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="cp-dialog info account-password-dialog">
+<div class="cheers-dialog info account-password-dialog" style="margin-top:250px;">
   <p>레시피를 작성하려면 이메일 인증이 필요합니다. {{ user.email }}으로 발송된 이메일을 확인하시고 이메일 인증을 완료해 주세요.</p>
-  <a class="cp-button inverted button" href="{% url 'main' %}">홈으로 이동</a>
+  <a class="cheers-button inverted button" href="{% url 'main' %}">홈으로 이동</a>
 </div>
 {% endblock body %}
