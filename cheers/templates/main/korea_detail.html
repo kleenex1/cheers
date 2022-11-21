@@ -1,74 +1,177 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block body %}
- <!-- 디테일 nav -->
- <section>
-  <div class="detail" style="margin-top:250px;">
-    <div class="py-5">
+  
+
+
+
+<!-- 디테일 nav -->
+<section>
+
+    <div class="py-5" style="margin-top:250px;">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <ul class="breadcrumb">
-              <li class="breadcrumb-item"> <a href="#">Home</a> </li>
-              <li class="breadcrumb-item active">Link</li>
-              <li class="breadcrumb-item active">Link</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6"><img class="img-fluid d-block" src="http://www.kajawine.kr/data/item/1425777045/thumb-1425777045_l1_160x214.jpg">
-            <div class="btn-group m-4">
+          <div class="col-md-6 mb-3">
+            <img class="img-fluid d-block mb-3" src="http://www.kajawine.kr/data/item/9353993218/thumb-9353993218_l1_360x480.jpg">
+            
+			<div style="left: -140px; display: flex;" class="btn-group m-4  ">
               <a href="#" class="btn btn-primary">이전상품</a> 
               <a href="#" class="btn btn-primary">크게보기</a>
               <a href="#" class="btn btn-primary">다음상품</a> </div>
-          </div>
+          	</div>
+
           <div class="col-md-6">
-            <h2 class="">Heading 2 <small class="text-muted">subtitle</small></h2>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><i class="fa fa-cloud text-primary mr-2">&nbsp; 원산지&nbsp;</i></li>
-              <li class="list-group-item"><i class="fa fa-bookmark text-primary mr-2">&nbsp; &nbsp;종류&nbsp;</i></li>
-              <li class="list-group-item" contenteditable="true"><i class="fa fa-bell text-primary mr-2"></i> &nbsp;당도&nbsp; <span> <img src="http://www.kajawine.kr/shop/img/common/taste_sugar_level0.png" boder="0"> </span></li>
-              <li class="list-group-item"><i class="fa fa-life-ring text-primary mr-2"></i> &nbsp;바디&nbsp; <span> <img src="http://www.kajawine.kr/shop/img/common/taste_sugar_level0.png" boder="0"> </span></li>
-              <li class="list-group-item"><i class="fa fa-paper-plane text-primary mr-2"></i> 용량</li>
-              <li class="list-group-item"><i class="fa fa-paper-plane text-primary mr-2"></i> 알콜도수</li>
-            </ul>
-            <ul class="list-group">
-              <li class=" border-0 list-group-item d-flex justify-content-between align-items-center"> 가격 <i class="fa fa-list text-muted fa-lg"></i></li>
-              <li class=" border-0 list-group-item d-flex justify-content-between align-items-center"> 매장문의 <i class="fa fa-cog text-muted fa-lg"></i></li>
-            </ul>
-            <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center"> 금액 <span class="badge badge-primary badge-pill">14</span> </li>
-            </ul>
-            <div class="d-grid gap-2">
-            </div><a class="btn btn-primary" href="#"><i class="fa fa-star fa-fw fa-1x py-1"></i></a>
-            <button class="btn btn-primary" type="button">구매 희망시, 방문 가능한 매장으로 문의해주세요.</button>
+            <h2 class="mb-4"> 화요25도500ml(증류식 소주)<br>(HAWYO 25)</h2>
+			<table class="table table-striped p-3">
+				<thead>
+				  <tr>
+					<th scope="col">원산지</th>
+					<th scope="col">한국</th>
+				  </tr>
+				  <tr>
+					<th scope="col">용량</th>
+					<th scope="col">500ml </th>
+				  </tr>
+				  <tr>
+					<th scope="col">알콜도수</th>
+					<th scope="col">25%</th>
+				  </tr>
+				  <tr>
+					<th scope="col">테이스팅</th>
+					<th scope="col">감압증류 방식으로 원주를 채취하여 부드러움  </th>
+				  </tr>
+				  <tr>
+					<th scope="col">고객 할인가</th>
+					<th scope="col">21,000원 </th>
+				  </tr>
+				  <tr>
+					<th scope="col">향과 맛</th>
+					<th scope="col">뜨거운 물과 6:4 비율로 섞어 마시는 걸 추천</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <!-- <tr>
+					<th scope="row">알콜도수</th>
+					<td>13.5%</td>
+				  </tr> -->
+				  <tr>
+					<th scope="row">당도</th>
+					<td><img src="http://www.kajawine.kr/shop/img/common/taste_sugar_level0.png" alt="당도"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">금액</th>
+					<td> 	21,000원</td>
+				  </tr>
+				</tbody>
+			  </table>
+			  <div class="p-4 m-4">
+				<button style="margin-left: 100px; padding-left:100px; padding-right:150px" type="button" class="btn ">상품문의</button>
+
+			  </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="py-5" >
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <ul class="breadcrumb">
-              <li class="breadcrumb-item"> <a href="#">Home</a> </li>
-              <li class="breadcrumb-item active">Link</li>
-              <li class="breadcrumb-item active">Link</li>
-            </ul><img class="img-fluid d-block" src="https://file.hitejinro.com/hitejinro2016/upFiles/brand/KR/PRINT/20221108_95690594.png">
-          </div>
-          <div class="col-md-6"><img class="img-fluid d-block" src="https://file.hitejinro.com/hitejinro2016/upFiles/brand/KR/PRINT/20221108_86152834.png" style=""></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
+
+
+	<div class="section">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-lg-5 mb-4 mb-lg-0 order-lg-2" data-aos="fade-up">
+					<img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ded3a0125080957.61124e186e560.jpg" alt="Image" class="img-fluid">
+				</div>
+				<div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+					<h2 class="heading mb-4">Healthy eating habits that care about the environment</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+					<p class="my-4" data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-primary">Read more</a></p>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<div class="section bg-light">
+		
+         
+<div class="container">
+	<div class="row align-items-stretch">
+		<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200" >
+		  <div class="media-entry">
+			  <img src="https://www.shakit.co.kr/data/file/bestreview/3068359458_raZPvsAY_21f229cf952e28c1d70c629b26f05bbd4b26ad2d.jpg" alt="Image" class="img-fluid">
+			<div class="bg-white m-body">
+			  <span class="date">May 14, 2022</span>
+			  <h3><a href="#">크리스마스 기념</a></h3>
+			  <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+
+			  <a href="#" class="more d-flex align-items-center float-start">
+				<span class="label">Read More</span>
+				<span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+			  </a>
+			</div>
+		  </div>
+		</div>
+		<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 " data-aos="fade-up" data-aos-delay="200" >
+		  <!-- data-aos="fade-up" data-aos-delay="200"  지우기 -->
+		  <div class="media-entry">
+			<a href="#">
+			  <img src="https://www.shakit.co.kr/data/file/bestreview/3068359458_6vj1hHQw_c9ec2db6b2431e826463f6591d4ffe869d4d7855.jpg" alt="Image" class="img-fluid">
+			</a>
+			<div class="bg-white m-body">
+			  <span class="date">May 20, 2022</span>
+			  <h3><a href="#">취향에 맞게 먹을 수 있었던..</a></h3>
+			  <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+
+			  <a href="#" class="more d-flex align-items-center float-start">
+				<span class="label">Read More</span>
+				<span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+			  </a>
+			</div>
+		  </div>
+		</div>
+		<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4"  data-aos="fade-up" data-aos-delay="200">
+		  <div class="media-entry">
+			<a href="#">
+			  <img src="https://www.shakit.co.kr/data/file/bestreview/3068359458_F1w0kTpd_c4aaf0d9a3f64694c4735fb034ffbc0a85f0e006.jpg" alt="Image" class="img-fluid">
+			</a>
+			<div class="bg-white m-body">
+			  <span class="date">May 14, 2020</span>
+			  <h3><a href="#">얼그레이 칵테일 나쁘지 않아요</a></h3>
+			  <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+			  <a href="#" class="more d-flex align-items-center float-start">
+				<span class="label">Read More</span>
+				<span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+			  </a>
+			</div>
+		  </div>
+		</div>
+		<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4"  data-aos="fade-up" data-aos-delay="200">
+		  <div class="media-entry">
+			<a href="#">
+			  <img src="https://www.shakit.co.kr/data/file/bestreview/3068359458_h76fwKPu_8c19273681329b5397d4da4ffd3ce4cf7140602e.jpg" alt="Image" class="img-fluid">
+			</a>
+			<div class="bg-white m-body">
+			  <span class="date">May 14, 2020</span>
+			  <h3><a href="#">모든 계절에 어울립니다</a></h3>
+			  <p>Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
+			  <a href="#" class="more d-flex align-items-center float-start">
+				<span class="label">Read More</span>
+				<span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+			  </a>
+			</div>
+		  </div>
+		</div>
+
+	
+</div>
+       
+
+
+
+
+</div>
   {% endblock body %}
 
+ 
