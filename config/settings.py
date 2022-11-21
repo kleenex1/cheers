@@ -175,5 +175,9 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
 # Email settings
 
 # Allauth 이메일 기능 활용(현재 터미널콘솔로 이메일전송하는방법)
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True 
+EMAIL_HOST_USER = "curian4881@gmail.com"
+EMAIL_HOST_PASSWORD = "gxwmooyzyzxruiua"
