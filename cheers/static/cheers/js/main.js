@@ -51,3 +51,4 @@ new Swiper('.promotion .swiper-container', {
       nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
     }
   })
+
