@@ -818,7 +818,6 @@ a.like-button:hover {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: url("../assets/main-fg.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top;
