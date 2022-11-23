@@ -19,5 +19,4 @@
 4.  Template : html을 반환
 
 </details>
-![작업내역](https://user-images.githubusercontent.com/101690522/203457803-5e67ce4e-facc-42a2-b6fb-6a52d179bc03.png)
 
