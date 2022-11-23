@@ -202,3 +202,4 @@ UserAdmin.inlines = (UserInline,)
 ![3](./assets/Untitled.png)
 
 [참고사이트](https://medium.com/@adamking0126/django-middlewares-and-the-request-response-cycle-fcbf8efb903f)
+
