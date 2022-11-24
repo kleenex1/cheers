@@ -1,4 +1,7 @@
-# Cheers
+# 20팀 Cheers(임수경, 변규탁)
+
+## 작업기간
+2022-11-16 ~ 2022-11-21
 
 ## 배포 페이지
 http://kdt.pythonanywhere.com/
